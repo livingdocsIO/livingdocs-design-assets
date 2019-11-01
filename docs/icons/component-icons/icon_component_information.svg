@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Information" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#514853;}
+	.st1{font-family:'Georgia-Italic';}
+	.st2{font-size:150px;}
+	.st3{fill:none;stroke:#514853;stroke-width:10;stroke-miterlimit:10;}
+</style>
+<font horiz-adv-x="2048">
+<!-- Georgia is either a registered trademark or a trademark of Microsoft Corporation in the United States and/or other countries. -->
+<!-- Copyright: Copyright 2019 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="Georgia-Italic" units-per-em="2048" underline-position="-183" underline-thickness="96"/>
+<missing-glyph horiz-adv-x="2048" d="M256,0l0,1536l1536,0l0,-1536M384,128l1280,0l0,1280l-1280,0z"/>
+<glyph unicode="i" horiz-adv-x="609" d="M551,109l-15,-64C475,20 426,3 389,-6C352,-16 321,-21 295,-21C242,-21 202,-7 175,21C148,48 135,82 135,123C135,138 136,154 139,171C142,188 146,209 152,234l106,425C263,682 269,707 274,734C279,761 281,783 281,802C281,839 275,864 263,877C250,889 225,895 187,895C172,895 153,893 129,888C104,883 86,879 73,876l15,64C140,963 187,981 228,992C269,1003 302,1009 326,1009C381,1009 420,996 445,970C470,944 482,909 482,865C482,853 481,837 478,816C475,795 471,775 466,754l-107,-425C352,303 347,278 342,253C337,228 334,207 334,191C334,153 343,127 360,113C377,99 404,92 442,92C455,92 473,94 497,97C520,100 538,104 551,109M622,1387C622,1349 610,1316 585,1288C560,1259 530,1245 493,1245C459,1245 430,1259 405,1286C380,1313 368,1343 368,1378C368,1415 380,1447 405,1474C430,1501 459,1515 493,1515C531,1515 562,1502 586,1477C610,1451 622,1421 622,1387z"/>
+</font>
+
+	<text transform="matrix(1 0 0 1 224.8237 302.5801)" class="st0 st1 st2">i</text>
+<circle class="st3" cx="250" cy="250" r="103.5"/>
+</svg>

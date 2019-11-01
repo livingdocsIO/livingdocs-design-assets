@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="_x33__Teaser_Row_without_image"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500"
+	 style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D4D4CE;}
+	.st1{fill:#514853;}
+	.st2{font-family:'Georgia-Bold';}
+	.st3{font-size:100px;}
+</style>
+<font horiz-adv-x="2048">
+<!-- Georgia is either a registered trademark or a trademark of Microsoft Corporation in the United States and/or other countries. -->
+<!-- Copyright: Copyright 2019 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="Georgia-Bold" units-per-em="2048" underline-position="-180" underline-thickness="122"/>
+<missing-glyph horiz-adv-x="2048" d="M256,0l0,1536l1536,0l0,-1536M384,128l1280,0l0,1280l-1280,0z"/>
+<glyph unicode="H" horiz-adv-x="1870" d="M1801,0l-767,0l0,78C1051,79 1075,81 1107,84C1139,87 1161,91 1173,96C1198,106 1215,119 1224,136C1233,152 1238,173 1238,198l0,489l-606,0l0,-478C632,186 637,166 647,148C656,130 673,116 696,106C709,101 730,95 761,89C792,83 817,79 836,78l0,-78l-767,0l0,78C86,79 110,81 143,85C175,88 198,93 213,98C237,107 254,120 263,138C272,155 277,176 277,200l0,1004C277,1227 273,1247 265,1263C256,1279 239,1293 213,1305C194,1314 168,1322 137,1329C106,1336 83,1340 69,1341l0,78l767,0l0,-78C815,1340 791,1336 762,1331C733,1326 711,1321 696,1316C670,1307 653,1294 645,1275C636,1256 632,1235 632,1214l0,-424l606,0l0,414C1238,1227 1234,1247 1225,1263C1216,1279 1199,1293 1173,1305C1156,1313 1133,1321 1104,1328C1075,1335 1051,1339 1034,1341l0,78l767,0l0,-78C1780,1340 1756,1337 1729,1333C1702,1328 1678,1323 1657,1316C1632,1307 1615,1294 1606,1275C1597,1256 1593,1236 1593,1214l0,-1005C1593,185 1597,165 1606,148C1615,131 1632,117 1657,106C1673,99 1696,93 1727,88C1757,83 1782,79 1801,78z"/>
+</font>
+
+	<g>
+	<rect x="341" y="234" class="st0" width="137" height="25"/>
+	<rect x="342" y="333" class="st0" width="37" height="25"/>
+	<rect x="342" y="283" class="st0" width="37" height="25"/>
+	<g>
+		<path class="st1" d="M414.4,317.6c0.1,0.7,0,1.5,0.2,2.2c1.2,4.2,1.2,7.6-2.1,11.4c-3.8,4.3-2.1,11.2,2.5,15.2
+			c4.4,3.9,11,4.2,15.3,0.2c5.5-5,10.7-10.2,15.8-15.6c4.6-5,4.4-11-0.1-16.5c-1.3-1.6-1.9-3.1-0.9-5c0.9-1.6,2.3-2.4,4.2-2
+			c0.9,0.2,1.8,0.8,2.5,1.4c7,7.2,7.7,19,1,26.6c-5.2,5.8-10.7,11.4-16.5,16.7c-7.7,6.9-18.5,7-26.1,0.8
+			c-7.9-6.5-10.1-17.1-4.7-26.1c2.2-3.6,5.5-6.6,8.3-9.8C414,317.3,414.2,317.4,414.4,317.6z"/>
+		<path class="st1" d="M465.9,322.9c-0.7-3.2-1.4-5.8-1.6-8.4c-0.1-1,0.8-2.2,1.5-3.1c5-5.7,4.8-12.7-0.7-17.8
+			c-4.3-4-11.5-4.2-15.7-0.1c-5.2,5-10.3,10-15.2,15.2c-4.7,4.8-4.6,11.2-0.2,16.7c1.3,1.6,2,3.3,0.8,5.2c-1,1.6-2.5,2.2-4.3,1.8
+			c-1-0.3-2-0.9-2.6-1.7c-7.2-8.2-7.1-19.5,0.6-27.8c4.7-5.1,9.6-10,14.7-14.6c11.9-10.7,29.3-5.7,33.6,9.5c1.7,6,0.5,11.7-3,16.6
+			C471.6,317.4,468.7,319.9,465.9,322.9z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 340.6592 211.8128)" class="st1 st2 st3">H</text>
+</g>
+<g>
+	<rect x="181" y="234" class="st0" width="137" height="25"/>
+	<rect x="182" y="333" class="st0" width="100" height="25"/>
+	<rect x="182" y="283" class="st0" width="136" height="25"/>
+	<text transform="matrix(1 0 0 1 180.6592 211.8128)" class="st1 st2 st3">H</text>
+</g>
+<g>
+	<rect x="21" y="234" class="st0" width="137" height="25"/>
+	<rect x="22" y="333" class="st0" width="100" height="25"/>
+	<rect x="22" y="283" class="st0" width="136" height="25"/>
+	<text transform="matrix(1 0 0 1 21.6592 211.8128)" class="st1 st2 st3">H</text>
+</g>
+</svg>
