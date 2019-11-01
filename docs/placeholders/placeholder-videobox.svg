@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 931 789" style="enable-background:new 0 0 931 789;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#D4D4CE;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:square;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#9F9E97;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#D6D6D6;fill-opacity:0;stroke:#D4D4CE;stroke-width:2;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#D6D6D6;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#2F2F2F;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<title>Group 10</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<rect x="625" y="532.5" class="st0" width="288.6" height="160.2"/>
+	<path id="Line" class="st1" d="M625.5,532.6l287.7,160"/>
+	<path class="st1" d="M913.1,532.6l-287.6,160"/>
+	<rect id="Text" x="625" y="723.7" class="st2" width="272.3" height="21.2"/>
+	<rect x="625" y="750.8" class="st2" width="253" height="21.2"/>
+	<rect x="625" y="702.5" class="st2" width="69.5" height="15.5"/>
+	<rect x="319.8" y="532.5" class="st0" width="288.6" height="160.2"/>
+	<path class="st1" d="M320.3,532.6l287.7,160"/>
+	<path class="st1" d="M607.9,532.6l-287.6,160"/>
+	<rect x="319.8" y="723.7" class="st2" width="272.3" height="21.2"/>
+	<rect x="319.8" y="750.8" class="st2" width="253" height="21.2"/>
+	<rect x="319.8" y="702.5" class="st2" width="69.5" height="15.5"/>
+	<rect x="15.6" y="532.5" class="st0" width="288.6" height="160.2"/>
+	<path class="st1" d="M16.1,532.6l287.7,160"/>
+	<path class="st1" d="M303.7,532.6L16,692.6"/>
+	<rect x="15.6" y="723.7" class="st2" width="272.3" height="21.2"/>
+	<rect x="15.6" y="750.8" class="st2" width="253" height="21.2"/>
+	<rect x="15.6" y="702.5" class="st2" width="69.5" height="15.5"/>
+</g>
+<g>
+	<g id="Bluewin-Placeholders_1_">
+		<g id="image_1_" transform="translate(1.000000, 2.000000)">
+			<rect x="-0.5" y="-2" class="st0" width="928.5" height="515.7"/>
+			<g id="cross_1_">
+				<path id="Line_1_" class="st1" d="M0.9-1.6l925.7,514.8"/>
+				<path class="st1" d="M926.6-1.6L0.9,513.3"/>
+			</g>
+			<g id="Group-27" transform="translate(248.829431, 128.561873)">
+				<path id="Ghost-Button" class="st2" d="M131.1,62.1h168.4c4.1,0,7.5,3.4,7.5,7.5v115.5c0,4.1-3.4,7.5-7.5,7.5H131.1
+					c-4.1,0-7.5-3.4-7.5-7.5V69.6C123.6,65.5,127,62.1,131.1,62.1z"/>
+				<g id="Play-icon" transform="translate(29.030100, 12.441472)">
+					<circle id="Oval" class="st3" cx="184.7" cy="114.9" r="46.6"/>
+					<polygon id="Triangle" class="st4" points="205.9,114.4 169.7,136.2 169.7,92.7 					"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<rect id="Text_1_" x="24.2" y="466.5" class="st2" width="488.9" height="24"/>
+	<rect x="24.2" y="438.5" class="st2" width="111.8" height="18"/>
+</g>
+<g>
+	<circle class="st5" cx="26.1" cy="611.6" r="20"/>
+	<path id="Page-1" class="st6" d="M17.8,611.5L17.8,611.5c0-0.5,0.2-0.9,0.5-1.2l0,0l10-10l0,0c0.3-0.3,0.7-0.5,1.2-0.5
+		c0.9,0,1.7,0.7,1.7,1.7c0,0.5-0.2,1-0.6,1.3l-8.7,8.7l8.8,8.8l0,0c0.3,0.3,0.5,0.7,0.5,1.2c0,0.9-0.7,1.7-1.7,1.7
+		c-0.4,0-0.9-0.2-1.2-0.5l0,0l-10-10l0,0C18,612.4,17.8,612,17.8,611.5L17.8,611.5L17.8,611.5z"/>
+</g>
+<g>
+	<circle class="st5" cx="903.5" cy="611.6" r="20"/>
+	<path id="Page-1_1_" class="st6" d="M911.9,611.6L911.9,611.6c0,0.5-0.2,0.9-0.5,1.2l0,0l-10,10l0,0c-0.3,0.3-0.7,0.5-1.2,0.5
+		c-0.9,0-1.7-0.7-1.7-1.7c0-0.5,0.2-1,0.6-1.3l8.7-8.7l-8.8-8.8l0,0c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.9,0.7-1.7,1.7-1.7
+		c0.4,0,0.9,0.2,1.2,0.5l0,0l10,10l0,0C911.7,610.7,911.9,611.1,911.9,611.6L911.9,611.6L911.9,611.6z"/>
+</g>
+</svg>

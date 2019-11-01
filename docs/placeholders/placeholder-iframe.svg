@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600px" height="334px" viewBox="0 0 600 334" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 13</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bluewin-Placeholders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-13">
+            <rect id="image" fill="#D4D4CE" x="0" y="0" width="600" height="333.239229"></rect>
+            <g id="html-embed" transform="translate(81.000000, 93.000000)" fill="#9F9E97">
+                <g id="Slice-1">
+                    <g id="Page-1">
+                        <g id="html-embed">
+                            <g id="Group-14">
+                                <g id="Group" transform="translate(144.000000, 0.000000)" fill-rule="nonzero">
+                                    <polygon id="Shape" points="50.8132258 52.7732258 50.8132258 67.0058065 0.225806452 45.0760484 0.225806452 32.9073387 50.8132258 10.9826613 50.8132258 25.3145968 15.5654032 38.8957258"></polygon>
+                                    <path d="M82.0947581,10.6800806 L68.0100806,68.6632258 C67.5415323,70.5712903 67.1328226,72.0819355 66.7805645,73.1895161 C66.4283065,74.2965323 65.8948387,75.1625 65.1733871,75.7755645 C64.4525,76.3976613 63.4047581,76.7064516 62.0279032,76.7064516 C58.6125806,76.7064516 56.9004032,75.2274194 56.9004032,72.2834677 C56.9004032,71.5112097 57.2351613,69.5833871 57.9052419,66.5 L71.9357258,8.51685484 C72.6741129,5.43403226 73.3780645,3.32104839 74.0481452,2.18298387 C74.7182258,1.04322581 76.0239516,0.4725 77.9715323,0.4725 C79.6470161,0.4725 80.9301613,0.875564516 81.8158871,1.68056452 C82.7044355,2.48556452 83.1504032,3.59258065 83.1504032,4.99935484 C83.1509677,6.03862903 82.7958871,7.93201613 82.0947581,10.6800806 L82.0947581,10.6800806 Z" id="Shape"></path>
+                                    <polygon id="Shape" points="139.773629 45.0760484 89.1867742 67.1045968 89.1867742 52.8720161 124.539597 38.9945161 89.1867742 25.3140323 89.1867742 11.183629 139.773629 33.0066935"></polygon>
+                                </g>
+                                <text id="IFRAME" font-family="AkzidGrtskNext-Med, Akzidenz-Grotesk Next" font-size="48" font-weight="400" letter-spacing="2.18000007">
+                                    <tspan x="120.630672" y="143">IFRAME</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
