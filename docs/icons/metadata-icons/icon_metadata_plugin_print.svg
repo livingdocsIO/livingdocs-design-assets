@@ -3,8 +3,8 @@
 <svg version="1.1" id="Plugin_Print" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#D4D4CE;}
-	.st1{fill:#514853;}
+	.st0{fill:#d4d4d4;}
+	.st1{fill:#525252;}
 </style>
 <polygon class="st0" points="367.7,138 407.1,176.7 406.3,361 255,361 255,138 "/>
 <polygon class="st1" points="407,177 368,177 368,138 387.5,157.5 "/>
