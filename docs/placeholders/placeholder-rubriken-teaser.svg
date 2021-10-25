@@ -20,17 +20,17 @@
                     <path d="M298.312782,0.138278292 L0.452674934,165.795672" id="Line"></path>
                 </g>
             </g>
-            <rect id="Text" fill="#d4d4d4" x="640" y="198" width="282" height="24"></rect>
-            <rect id="Text" fill="#d4d4d4" x="640" y="226" width="262" height="24"></rect>
-            <rect id="Text" fill="#d4d4d4" x="640" y="266" width="262" height="18"></rect>
-            <rect id="Text" fill="#d4d4d4" x="640" y="176" width="72" height="18"></rect>
-            <rect id="Text" fill="#d4d4d4" x="640" y="288" width="235" height="18"></rect>
-            <rect id="Text" fill="#d4d4d4" x="640" y="310" width="161" height="18"></rect>
-            <g id="Group-7" transform="translate(15.000000, 268.000000)" fill="#d4d4d4">
+            <rect id="Text" fill="#b8b8b8" x="640" y="198" width="282" height="24"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="226" width="262" height="24"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="266" width="262" height="18"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="176" width="72" height="18"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="288" width="235" height="18"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="310" width="161" height="18"></rect>
+            <g id="Group-7" transform="translate(15.000000, 268.000000)" fill="#b8b8b8">
                 <rect id="Text" x="0" y="0" width="524" height="26"></rect>
                 <rect id="Text" x="0" y="34" width="262" height="26"></rect>
             </g>
-            <polygon id="Text" fill="#d4d4d4" points="15 234 162 234 162 253 15 253"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="15 234 162 234 162 253 15 253"></polygon>
         </g>
     </g>
 </svg>

@@ -15,14 +15,14 @@
                         <path d="M79.8161289,0.0666401408 L0.121117039,79.9015288" id="Line"></path>
                     </g>
                 </g>
-                <rect id="Text" fill="#d4d4d4" x="100" y="2" width="282" height="30"></rect>
-                <rect id="Text" fill="#d4d4d4" x="0" y="100" width="502" height="30"></rect>
-                <rect id="Text" fill="#d4d4d4" x="0" y="144" width="445" height="30"></rect>
-                <rect id="Text" fill="#d4d4d4" x="0" y="190" width="191" height="30"></rect>
+                <rect id="Text" fill="#b8b8b8" x="100" y="2" width="282" height="30"></rect>
+                <rect id="Text" fill="#b8b8b8" x="0" y="100" width="502" height="30"></rect>
+                <rect id="Text" fill="#b8b8b8" x="0" y="144" width="445" height="30"></rect>
+                <rect id="Text" fill="#b8b8b8" x="0" y="190" width="191" height="30"></rect>
                 <rect id="Ghost-Button" stroke="#979797" stroke-width="4" x="422" y="4" width="140" height="46" rx="5"></rect>
-                <rect id="Text" fill="#d4d4d4" x="100" y="48" width="282" height="30"></rect>
+                <rect id="Text" fill="#b8b8b8" x="100" y="48" width="282" height="30"></rect>
             </g>
-            <g id="tweet-embed" transform="translate(479.000000, 136.000000)" fill-rule="nonzero" fill="#d4d4d4">
+            <g id="tweet-embed" transform="translate(479.000000, 136.000000)" fill-rule="nonzero" fill="#b8b8b8">
                 <g id="Slice-1">
                     <g id="Page-1">
                         <g id="tweet-embed">

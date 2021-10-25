@@ -10,15 +10,15 @@
                             <path d="M139.678225,0.0655988886 L0.211954819,78.6530674" id="Line"></path>
                         </g>
                     </g>
-                    <rect id="Ghost-Button" fill="#d4d4d4" x="8" y="30" width="46" height="42" rx="5"></rect>
+                    <rect id="Ghost-Button" fill="#b8b8b8" x="8" y="30" width="46" height="42" rx="5"></rect>
                     <g id="Play-icon" transform="translate(16.000000, 36.000000)" fill="#eaeaea">
                         <circle id="Oval" stroke="#eaeaea" stroke-width="2" fill-opacity="0" cx="15" cy="15" r="15"></circle>
                         <polygon id="Triangle" transform="translate(16.000000, 14.833333) rotate(90.000000) translate(-16.000000, -14.833333) " points="16 9 23 20.6666667 9 20.6666667"></polygon>
                     </g>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="21" width="140" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="1" width="124" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="41" width="133" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="61" width="68" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="21" width="140" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="1" width="124" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="41" width="133" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="61" width="68" height="16"></rect>
                 </g>
                 <g id="Teaser-Small" transform="translate(0.000000, 104.000000)">
                     <g id="image">
@@ -27,16 +27,16 @@
                             <path d="M0.211954819,0.0655988886 L139.678225,78.6530674" id="Line"></path>
                             <path d="M139.678225,0.0655988886 L0.211954819,78.6530674" id="Line"></path>
                         </g>
-                        <rect id="Ghost-Button" fill="#d4d4d4" x="8" y="30" width="46" height="42" rx="5"></rect>
+                        <rect id="Ghost-Button" fill="#b8b8b8" x="8" y="30" width="46" height="42" rx="5"></rect>
                         <g id="Play-icon" transform="translate(16.000000, 36.000000)" fill="#eaeaea">
                             <circle id="Oval" stroke="#eaeaea" stroke-width="2" fill-opacity="0" cx="15" cy="15" r="15"></circle>
                             <polygon id="Triangle" transform="translate(16.000000, 14.833333) rotate(90.000000) translate(-16.000000, -14.833333) " points="16 9 23 20.6666667 9 20.6666667"></polygon>
                         </g>
                     </g>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="21" width="140" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="1" width="124" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="41" width="133" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="61" width="68" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="21" width="140" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="1" width="124" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="41" width="133" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="61" width="68" height="16"></rect>
                 </g>
                 <g id="Teaser-Small" transform="translate(0.000000, 208.000000)">
                     <g id="image">
@@ -46,15 +46,15 @@
                             <path d="M139.678225,0.0655988886 L0.211954819,78.6530674" id="Line"></path>
                         </g>
                     </g>
-                    <rect id="Ghost-Button" fill="#d4d4d4" x="8" y="30" width="46" height="42" rx="5"></rect>
+                    <rect id="Ghost-Button" fill="#b8b8b8" x="8" y="30" width="46" height="42" rx="5"></rect>
                     <g id="Play-icon" transform="translate(16.000000, 36.000000)" fill="#eaeaea">
                         <circle id="Oval" stroke="#eaeaea" stroke-width="2" fill-opacity="0" cx="15" cy="15" r="15"></circle>
                         <polygon id="Triangle" transform="translate(16.000000, 14.833333) rotate(90.000000) translate(-16.000000, -14.833333) " points="16 9 23 20.6666667 9 20.6666667"></polygon>
                     </g>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="21" width="140" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="1" width="124" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="41" width="133" height="16"></rect>
-                    <rect id="Text" fill="#d4d4d4" x="150" y="61" width="68" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="21" width="140" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="1" width="124" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="41" width="133" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="150" y="61" width="68" height="16"></rect>
                 </g>
             </g>
         </g>

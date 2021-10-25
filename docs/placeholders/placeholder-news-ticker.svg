@@ -11,11 +11,11 @@
         <g id="news-ticker">
             <rect id="Rectangle" fill="#eaeaea" x="0" y="0" width="980" height="43"></rect>
             <g id="Rectangle-2">
-                <use fill="#d4d4d4" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use fill="#b8b8b8" fill-rule="evenodd" xlink:href="#path-1"></use>
                 <rect stroke="#979797" stroke-width="1" x="15.5" y="9.5" width="171" height="25"></rect>
             </g>
             <g id="Rectangle-2">
-                <use fill="#d4d4d4" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <use fill="#b8b8b8" fill-rule="evenodd" xlink:href="#path-2"></use>
                 <rect stroke="#979797" stroke-width="1" x="205.5" y="9.5" width="521" height="25"></rect>
             </g>
         </g>

@@ -12,7 +12,7 @@
                 <path d="M618.574999,0.286730907 L0.938657054,343.790357" id="Line"></path>
             </g>
             <g id="Group-27" transform="translate(248.829431, 128.561873)">
-                <rect id="Ghost-Button" fill="#d4d4d4" x="-3.00478271e-14" y="0" width="122.341137" height="87.090301" rx="5"></rect>
+                <rect id="Ghost-Button" fill="#b8b8b8" x="-3.00478271e-14" y="0" width="122.341137" height="87.090301" rx="5"></rect>
                 <g id="Play-icon" transform="translate(29.030100, 12.441472)" fill="#eaeaea">
                     <circle id="Oval" stroke="#eaeaea" stroke-width="2" fill-opacity="0" cx="31.1036789" cy="31.1036789" r="31.1036789"></circle>
                     <polygon id="Triangle" transform="translate(33.177258, 30.758082) rotate(90.000000) translate(-33.177258, -30.758082) " points="33.1772575 18.6622074 47.6923077 42.8539576 18.6622074 42.8539576"></polygon>

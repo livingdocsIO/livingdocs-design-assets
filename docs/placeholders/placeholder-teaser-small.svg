@@ -11,10 +11,10 @@
                                 <path d="M139.678225,0.0655988886 L0.211954819,78.6530674" id="Line"></path>
                             </g>
                         </g>
-                        <rect id="Text" fill="#d4d4d4" x="150" y="21" width="140" height="16"></rect>
-                        <rect id="Text" fill="#d4d4d4" x="150" y="1" width="63" height="16"></rect>
-                        <rect id="Text" fill="#d4d4d4" x="150" y="41" width="133" height="16"></rect>
-                        <rect id="Text" fill="#d4d4d4" x="150" y="61" width="98" height="16"></rect>
+                        <rect id="Text" fill="#b8b8b8" x="150" y="21" width="140" height="16"></rect>
+                        <rect id="Text" fill="#b8b8b8" x="150" y="1" width="63" height="16"></rect>
+                        <rect id="Text" fill="#b8b8b8" x="150" y="41" width="133" height="16"></rect>
+                        <rect id="Text" fill="#b8b8b8" x="150" y="61" width="98" height="16"></rect>
                     </g>
                 </g>
             </g>
