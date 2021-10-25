@@ -8,23 +8,23 @@
         <g id="media-slider" transform="translate(0.000000, 1.000000)">
             <g id="Group-3">
                 <g id="image">
-                    <rect fill="#D4D4CE" x="0" y="1" width="936.131764" height="519.926378"></rect>
+                    <rect fill="#eaeaea" x="0" y="1" width="936.131764" height="519.926378"></rect>
                     <g id="cross" transform="translate(2.497280, 0.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                         <path d="M1.41838146,0.433271982 L934.713382,519.493106" id="Line"></path>
                         <path d="M934.713382,0.433271982 L1.41838146,519.493106" id="Line"></path>
                     </g>
                 </g>
-                <rect id="Text" fill="#9F9E97" x="0" y="533" width="604" height="24"></rect>
+                <rect id="Text" fill="#b8b8b8" x="0" y="533" width="604" height="24"></rect>
                 <g id="Group" transform="translate(18.000000, 236.000000)">
-                    <rect id="Text" fill="#9F9E97" x="0" y="0" width="50" height="50"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="0" width="50" height="50"></rect>
                     <g id="Group-6" transform="translate(18.000000, 13.000000)" stroke="#F6F6F6" stroke-opacity="0.987432065" stroke-width="3" stroke-linecap="square">
                         <path d="M1,0 C1,0 17.0130797,16.0130797 12.0435032,11.0435032" id="Line" transform="translate(7.000000, 6.000000) scale(1, -1) translate(-7.000000, -6.000000) "></path>
                         <path d="M0.262864781,12 C0.262864781,12 16.2759444,28.0130797 11.306368,23.0435032" id="Line" transform="translate(6.262865, 18.000000) scale(-1, -1) translate(-6.262865, -18.000000) "></path>
                     </g>
                 </g>
-                <polygon id="Text" fill="#9F9E97" points="0 565 147 565 147 589 0 589"></polygon>
+                <polygon id="Text" fill="#b8b8b8" points="0 565 147 565 147 589 0 589"></polygon>
                 <g id="Group-2" transform="translate(868.000000, 236.000000)">
-                    <rect id="Text" fill="#9F9E97" x="0" y="0" width="50" height="50"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="0" width="50" height="50"></rect>
                     <g id="Group-4" transform="translate(25.500000, 25.000000) scale(-1, -1) translate(-25.500000, -25.000000) translate(19.000000, 13.000000)" stroke-linecap="square" stroke-opacity="0.987432065" stroke="#F6F6F6" stroke-width="3">
                         <g id="Group-5">
                             <path d="M0.737135219,0 C0.737135219,0 16.7502149,16.0130797 11.7806384,11.0435032" id="Line" transform="translate(6.737135, 6.000000) scale(1, -1) translate(-6.737135, -6.000000) "></path>

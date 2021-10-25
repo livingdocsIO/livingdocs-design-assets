@@ -5,18 +5,18 @@
             <g id="Teaser-Demi" transform="translate(0.000000, 432.000000)">
                 <g>
                     <g id="image">
-                        <rect fill="#D4D4CE" x="0" y="0" width="298.765457" height="165.933951"></rect>
+                        <rect fill="#eaeaea" x="0" y="0" width="298.765457" height="165.933951"></rect>
                         <g id="cross" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                             <path d="M0.452674934,0.138278292 L298.312782,165.795672" id="Line"></path>
                             <path d="M298.312782,0.138278292 L0.452674934,165.795672" id="Line"></path>
                         </g>
                     </g>
-                    <rect id="Text" fill="#9F9E97" x="0" y="198" width="282" height="22"></rect>
-                    <rect id="Text" fill="#9F9E97" x="0" y="226" width="262" height="22"></rect>
-                    <rect id="Text" fill="#9F9E97" x="0" y="266" width="262" height="16"></rect>
-                    <rect id="Text" fill="#9F9E97" x="0" y="176" width="72" height="16"></rect>
-                    <rect id="Text" fill="#9F9E97" x="0" y="288" width="235" height="16"></rect>
-                    <rect id="Text" fill="#9F9E97" x="0" y="310" width="161" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="198" width="282" height="22"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="226" width="262" height="22"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="266" width="262" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="176" width="72" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="288" width="235" height="16"></rect>
+                    <rect id="Text" fill="#b8b8b8" x="0" y="310" width="161" height="16"></rect>
                 </g>
             </g>
         </g>

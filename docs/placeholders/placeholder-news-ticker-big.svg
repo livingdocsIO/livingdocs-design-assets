@@ -8,58 +8,58 @@
         <g id="news-ticker-big">
             <g id="Group-28" transform="translate(67.000000, 3.000000)">
                 <g id="news-ticker-big">
-                    <circle id="Oval-2" stroke="#979797" fill="#9F9E97" cx="8" cy="8" r="8"></circle>
+                    <circle id="Oval-2" stroke="#979797" fill="#b8b8b8" cx="8" cy="8" r="8"></circle>
                     <g id="image" transform="translate(40.000000, 100.000000)">
-                        <rect fill="#D4D4CE" x="0" y="0.0971322849" width="139.575758" height="77.5765337"></rect>
+                        <rect fill="#eaeaea" x="0" y="0.0971322849" width="139.575758" height="77.5765337"></rect>
                         <g id="cross" transform="translate(0.372340, 0.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                             <path d="M0.211478421,0.0646471114 L139.364279,77.5118866" id="Line"></path>
                             <path d="M139.364279,0.0646471114 L0.211478421,77.5118866" id="Line"></path>
                         </g>
                     </g>
-                    <circle id="Oval-2" stroke="#979797" fill="#9F9E97" cx="8" cy="108" r="8"></circle>
-                    <circle id="Oval-2" stroke="#979797" fill="#9F9E97" cx="8" cy="238" r="8"></circle>
-                    <circle id="Oval-2" stroke="#979797" fill="#9F9E97" cx="8" cy="569" r="8"></circle>
-                    <circle id="Oval-2" stroke="#979797" fill="#9F9E97" cx="8" cy="649" r="8"></circle>
+                    <circle id="Oval-2" stroke="#979797" fill="#b8b8b8" cx="8" cy="108" r="8"></circle>
+                    <circle id="Oval-2" stroke="#979797" fill="#b8b8b8" cx="8" cy="238" r="8"></circle>
+                    <circle id="Oval-2" stroke="#979797" fill="#b8b8b8" cx="8" cy="569" r="8"></circle>
+                    <circle id="Oval-2" stroke="#979797" fill="#b8b8b8" cx="8" cy="649" r="8"></circle>
                 </g>
             </g>
             <g id="image" transform="translate(107.000000, 229.000000)">
-                <rect fill="#D4D4CE" x="0" y="0" width="525" height="292"></rect>
+                <rect fill="#eaeaea" x="0" y="0" width="525" height="292"></rect>
                 <g id="cross" transform="translate(1.000000, 0.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                     <path d="M0.795454545,0.243333333 L524.204545,291.756667" id="Line"></path>
                     <path d="M524.204545,0.243333333 L0.795454545,291.756667" id="Line"></path>
                 </g>
-                <rect id="Ghost-Button" fill="#9F9E97" x="20" y="230" width="139" height="42" rx="5"></rect>
-                <polygon id="Triangle" fill="#D6D6D6" transform="translate(44.000000, 250.833333) rotate(90.000000) translate(-44.000000, -250.833333) " points="44 245 51 256.666667 37 256.666667"></polygon>
-                <circle id="Oval" stroke="#D4D4CE" stroke-width="2" fill-opacity="0" fill="#D6D6D6" cx="43" cy="251" r="15"></circle>
+                <rect id="Ghost-Button" fill="#b8b8b8" x="20" y="230" width="139" height="42" rx="5"></rect>
+                <polygon id="Triangle" fill="#eaeaea" transform="translate(44.000000, 250.833333) rotate(90.000000) translate(-44.000000, -250.833333) " points="44 245 51 256.666667 37 256.666667"></polygon>
+                <circle id="Oval" stroke="#eaeaea" stroke-width="2" fill-opacity="0" fill="#eaeaea" cx="43" cy="251" r="15"></circle>
             </g>
-            <polygon id="Text" fill="#9F9E97" points="107 0.344115403 257 0.344115403 257 20.3441154 107 20.3441154"></polygon>
-            <polygon id="Text" fill="#9F9E97" points="257 103.344115 357 103.344115 357 124.743858 257 124.743858"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="107 0.344115403 257 0.344115403 257 20.3441154 107 20.3441154"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="257 103.344115 357 103.344115 357 124.743858 257 124.743858"></polygon>
             <g id="Group-29" transform="translate(0.000000, 1.000000)">
                 <g id="Group-30">
-                    <polygon id="Text" fill="#9F9E97" points="107 29 643 29 643 49 107 49"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="107 560.344115 257 560.344115 257 580.344115 107 580.344115"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="107 590 545 590 545 610 107 610"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="258 130 597 130 597 151.399742 258 151.399742"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="107 29 643 29 643 49 107 49"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="107 560.344115 257 560.344115 257 580.344115 107 580.344115"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="107 590 545 590 545 610 107 610"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="258 130 597 130 597 151.399742 258 151.399742"></polygon>
                     <g id="image" transform="translate(107.000000, 642.000000)">
-                        <rect fill="#D4D4CE" x="0" y="0.0971322849" width="139.575758" height="77.5765337"></rect>
+                        <rect fill="#eaeaea" x="0" y="0.0971322849" width="139.575758" height="77.5765337"></rect>
                         <g id="cross" transform="translate(0.372340, 0.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                             <path d="M0.211478421,0.0646471114 L139.364279,77.5118866" id="Line"></path>
                             <path d="M139.364279,0.0646471114 L0.211478421,77.5118866" id="Line"></path>
                         </g>
                     </g>
-                    <polygon id="Text" fill="#9F9E97" points="257 642.344115 407 642.344115 407 663.743858 257 663.743858"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="258 670 637 670 637 691.399742 258 691.399742"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="0 0 42 2.77555756e-16 42 20 0 20"></polygon>
-                    <circle id="Oval-2" stroke="#979797" fill="#9F9E97" cx="75" cy="769" r="8"></circle>
-                    <polygon id="Text" fill="#9F9E97" points="107 758.344115 207 758.344115 207 778.344115 107 778.344115"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="107 788 513 788 513 808 107 808"></polygon>
-                    <polygon id="Text" fill="#9F9E97" points="0 759 42 759 42 779 0 779"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="257 642.344115 407 642.344115 407 663.743858 257 663.743858"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="258 670 637 670 637 691.399742 258 691.399742"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="0 0 42 2.77555756e-16 42 20 0 20"></polygon>
+                    <circle id="Oval-2" stroke="#979797" fill="#b8b8b8" cx="75" cy="769" r="8"></circle>
+                    <polygon id="Text" fill="#b8b8b8" points="107 758.344115 207 758.344115 207 778.344115 107 778.344115"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="107 788 513 788 513 808 107 808"></polygon>
+                    <polygon id="Text" fill="#b8b8b8" points="0 759 42 759 42 779 0 779"></polygon>
                 </g>
             </g>
-            <polygon id="Text" fill="#9F9E97" points="0 101 42 101 42 122.399742 0 122.399742"></polygon>
-            <polygon id="Text" fill="#9F9E97" points="0 231 42 231 42 252.399742 0 252.399742"></polygon>
-            <polygon id="Text" fill="#9F9E97" points="0 562 42 562 42 583.399742 0 583.399742"></polygon>
-            <polygon id="Text" fill="#9F9E97" points="0 642 42 642 42 663.399742 0 663.399742"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="0 101 42 101 42 122.399742 0 122.399742"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="0 231 42 231 42 252.399742 0 252.399742"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="0 562 42 562 42 583.399742 0 583.399742"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="0 642 42 642 42 663.399742 0 663.399742"></polygon>
             <path d="M75.5,10.5 L75.5,808.5" id="Line-2" stroke="#979797" stroke-linecap="square"></path>
         </g>
     </g>

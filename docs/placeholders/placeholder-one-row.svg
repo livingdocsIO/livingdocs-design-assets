@@ -6,19 +6,19 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="One-Row">
-            <rect id="Rectangle" fill="#D8D8D8" x="340.370752" y="25.7466529" width="159.629248" height="73.1204943"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="170.442842" y="25.7466529" width="159.629248" height="73.1204943"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="0.514933059" y="25.7466529" width="159.629248" height="73.1204943"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="340.370752" y="104.016478" width="79.8146241" height="15.4479918"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="170.442842" y="104.016478" width="79.8146241" height="15.4479918"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="0.514933059" y="104.016478" width="79.8146241" height="15.4479918"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="340.370752" y="124.6138" width="132.337796" height="15.4479918"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="340.370752" y="145.211123" width="159.629248" height="35.015448"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="170.442842" y="124.6138" width="132.337796" height="15.4479918"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="170.442842" y="145.211123" width="159.629248" height="35.015448"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="0.514933059" y="124.6138" width="132.337796" height="15.4479918"></rect>
-            <rect id="Rectangle" fill="#D8D8D8" x="0.514933059" y="145.211123" width="159.629248" height="35.015448"></rect>
-            <rect id="Rectangle" fill="#2F2F2F" x="0" y="0" width="79.8146241" height="20.5973223"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="340.370752" y="25.7466529" width="159.629248" height="73.1204943"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="170.442842" y="25.7466529" width="159.629248" height="73.1204943"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="0.514933059" y="25.7466529" width="159.629248" height="73.1204943"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="340.370752" y="104.016478" width="79.8146241" height="15.4479918"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="170.442842" y="104.016478" width="79.8146241" height="15.4479918"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="0.514933059" y="104.016478" width="79.8146241" height="15.4479918"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="340.370752" y="124.6138" width="132.337796" height="15.4479918"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="340.370752" y="145.211123" width="159.629248" height="35.015448"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="170.442842" y="124.6138" width="132.337796" height="15.4479918"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="170.442842" y="145.211123" width="159.629248" height="35.015448"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="0.514933059" y="124.6138" width="132.337796" height="15.4479918"></rect>
+            <rect id="Rectangle" fill="#eaeaea" x="0.514933059" y="145.211123" width="159.629248" height="35.015448"></rect>
+            <rect id="Rectangle" fill="#949494" x="0" y="0" width="79.8146241" height="20.5973223"></rect>
         </g>
     </g>
 </svg>

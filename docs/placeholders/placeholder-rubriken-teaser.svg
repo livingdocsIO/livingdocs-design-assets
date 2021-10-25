@@ -7,30 +7,30 @@
     <g id="Bluewin-Placeholders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="rubriken-teaser" transform="translate(0.000000, 2.000000)">
             <g id="image">
-                <rect fill="#D4D4CE" x="0" y="0.659574468" width="617.44861" height="342.930164"></rect>
+                <rect fill="#eaeaea" x="0" y="0.659574468" width="617.44861" height="342.930164"></rect>
                 <g id="cross" transform="translate(1.647142, 0.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                     <path d="M0.935528197,0.285775137 L616.513082,342.644389" id="Line"></path>
                     <path d="M616.513082,0.285775137 L0.935528197,342.644389" id="Line"></path>
                 </g>
             </g>
             <g id="image" transform="translate(640.000000, 0.000000)">
-                <rect fill="#D4D4CE" x="0" y="0" width="298.765457" height="165.933951"></rect>
+                <rect fill="#eaeaea" x="0" y="0" width="298.765457" height="165.933951"></rect>
                 <g id="cross" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                     <path d="M0.452674934,0.138278292 L298.312782,165.795672" id="Line"></path>
                     <path d="M298.312782,0.138278292 L0.452674934,165.795672" id="Line"></path>
                 </g>
             </g>
-            <rect id="Text" fill="#9F9E97" x="640" y="198" width="282" height="24"></rect>
-            <rect id="Text" fill="#9F9E97" x="640" y="226" width="262" height="24"></rect>
-            <rect id="Text" fill="#9F9E97" x="640" y="266" width="262" height="18"></rect>
-            <rect id="Text" fill="#9F9E97" x="640" y="176" width="72" height="18"></rect>
-            <rect id="Text" fill="#9F9E97" x="640" y="288" width="235" height="18"></rect>
-            <rect id="Text" fill="#9F9E97" x="640" y="310" width="161" height="18"></rect>
-            <g id="Group-7" transform="translate(15.000000, 268.000000)" fill="#9F9E97">
+            <rect id="Text" fill="#b8b8b8" x="640" y="198" width="282" height="24"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="226" width="262" height="24"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="266" width="262" height="18"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="176" width="72" height="18"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="288" width="235" height="18"></rect>
+            <rect id="Text" fill="#b8b8b8" x="640" y="310" width="161" height="18"></rect>
+            <g id="Group-7" transform="translate(15.000000, 268.000000)" fill="#b8b8b8">
                 <rect id="Text" x="0" y="0" width="524" height="26"></rect>
                 <rect id="Text" x="0" y="34" width="262" height="26"></rect>
             </g>
-            <polygon id="Text" fill="#9F9E97" points="15 234 162 234 162 253 15 253"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="15 234 162 234 162 253 15 253"></polygon>
         </g>
     </g>
 </svg>

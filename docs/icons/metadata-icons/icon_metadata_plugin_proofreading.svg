@@ -3,8 +3,8 @@
 <svg version="1.1" id="Plugin_Proofreading" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#F9F9F3;stroke:#514853;stroke-width:25;stroke-miterlimit:10;}
-	.st1{fill:#514853;}
+	.st0{fill:#f8f8f8;stroke:#525252;stroke-width:25;stroke-miterlimit:10;}
+	.st1{fill:#525252;}
 </style>
 <circle class="st0" cx="213.2" cy="213" r="66.8"/>
 <rect x="250" y="300.5" transform="matrix(0.7071 0.7071 -0.7071 0.7071 312.9744 -129.4918)" class="st1" width="125.6" height="25"/>

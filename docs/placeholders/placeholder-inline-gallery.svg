@@ -7,21 +7,21 @@
     <g id="Bluewin-Placeholders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group-3" transform="translate(0.000000, 1.000000)">
             <g id="image">
-                <rect fill="#D4D4CE" x="0" y="1" width="936.131764" height="519.926378"></rect>
+                <rect fill="#eaeaea" x="0" y="1" width="936.131764" height="519.926378"></rect>
                 <g id="cross" transform="translate(2.497280, 0.000000)" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                     <path d="M1.41838146,0.433271982 L934.713382,519.493106" id="Line"></path>
                     <path d="M934.713382,0.433271982 L1.41838146,519.493106" id="Line"></path>
                 </g>
             </g>
-            <rect id="Text" fill="#9F9E97" x="0" y="529" width="604" height="24"></rect>
+            <rect id="Text" fill="#b8b8b8" x="0" y="529" width="604" height="24"></rect>
             <g id="Group" transform="translate(18.000000, 236.000000)">
-                <rect id="Text" fill="#9F9E97" x="0" y="0" width="50" height="50"></rect>
+                <rect id="Text" fill="#b8b8b8" x="0" y="0" width="50" height="50"></rect>
                 <path d="M18,12 C18,12 34.0130797,28.0130797 29.0435032,23.0435032" id="Line" stroke-opacity="0.987432065" stroke="#F6F6F6" stroke-width="3" stroke-linecap="square" transform="translate(24.000000, 18.000000) scale(1, -1) translate(-24.000000, -18.000000) "></path>
                 <path d="M17.2628648,24 C17.2628648,24 33.2759444,40.0130797 28.306368,35.0435032" id="Line" stroke-opacity="0.987432065" stroke="#F6F6F6" stroke-width="3" stroke-linecap="square" transform="translate(23.262865, 30.000000) scale(-1, -1) translate(-23.262865, -30.000000) "></path>
             </g>
-            <polygon id="Text" fill="#9F9E97" points="0 561 147 561 147 585 0 585"></polygon>
+            <polygon id="Text" fill="#b8b8b8" points="0 561 147 561 147 585 0 585"></polygon>
             <g id="Group-2" transform="translate(868.000000, 236.000000)">
-                <rect id="Text" fill="#9F9E97" x="0" y="0" width="50" height="50"></rect>
+                <rect id="Text" fill="#b8b8b8" x="0" y="0" width="50" height="50"></rect>
                 <path d="M20.5,13.5 C20.5,13.5 36.5130797,29.5130797 31.5435032,24.5435032" id="Line" stroke-opacity="0.987432065" stroke="#F6F6F6" stroke-width="3" stroke-linecap="square"></path>
                 <path d="M19.7628648,24.5 C19.7628648,24.5 35.7759444,40.5130797 30.806368,35.5435032" id="Line" stroke-opacity="0.987432065" stroke="#F6F6F6" stroke-width="3" stroke-linecap="square" transform="translate(25.762865, 30.500000) scale(-1, 1) translate(-25.762865, -30.500000) "></path>
             </g>
