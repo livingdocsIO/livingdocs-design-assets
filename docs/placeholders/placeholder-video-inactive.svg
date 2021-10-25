@@ -3,9 +3,9 @@
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 621 348" style="enable-background:new 0 0 621 348;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#F2F2F2;}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#F2F2F2;stroke-width:2;}
-	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;}
+	.st0{fill:#eaeaea;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#eaeaea;stroke-width:2;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#eaeaea;}
 </style>
 <g>
 	<path class="st0" d="M619.9,1v346H1V1H619.9 M620.9,0H0v348h620.9V0L620.9,0z"/>

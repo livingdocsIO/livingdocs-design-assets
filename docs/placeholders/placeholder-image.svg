@@ -6,8 +6,8 @@
     <defs></defs>
     <g id="Bluewin-Placeholders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="image" transform="translate(1.000000, 2.000000)">
-            <rect fill="#F2F2F2" x="0" y="0" width="639.497967" height="359.85676"></rect>
-            <rect fill="#F2F2F2" x="0" y="0" width="639.497967" height="359.85676"></rect>
+            <rect fill="#eaeaea" x="0" y="0" width="639.497967" height="359.85676"></rect>
+            <rect fill="#eaeaea" x="0" y="0" width="639.497967" height="359.85676"></rect>
             <g id="cross" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                 <path d="M0.968936314,0.299880634 L638.529031,359.55688" id="Line"></path>
                 <path d="M638.529031,0.299880634 L0.968936314,359.55688" id="Line"></path>

@@ -8,8 +8,8 @@
         <g id="Tweet" transform="translate(2.000000, 2.000000)">
             <g>
                 <g id="image">
-                    <rect fill="#F2F2F2" x="0" y="0" width="79.9372459" height="79.9681689"></rect>
-                    <rect fill="#F2F2F2" x="0" y="0" width="79.9372459" height="79.9681689"></rect>
+                    <rect fill="#eaeaea" x="0" y="0" width="79.9372459" height="79.9681689"></rect>
+                    <rect fill="#eaeaea" x="0" y="0" width="79.9372459" height="79.9681689"></rect>
                     <g id="cross" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square">
                         <path d="M0.121117039,0.0666401408 L79.8161289,79.9015288" id="Line"></path>
                         <path d="M79.8161289,0.0666401408 L0.121117039,79.9015288" id="Line"></path>
