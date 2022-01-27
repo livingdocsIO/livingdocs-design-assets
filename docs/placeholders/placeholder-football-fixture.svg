@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1728 276" enable-background="new 0 0 1728 276" xml:space="preserve">
+<g id="Teams">
+</g>
+<g id="Table">
+</g>
+<g id="Table__x5B_edible_x5D_">
+</g>
+<g id="Fixture">
+	<g>
+		<rect fill="#E6E6E6" width="1728" height="276"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#ADADAD" stroke-miterlimit="10" d="M930.5,69.4H797.5c-4.7,0-8.5-3.8-8.5-8.5V43.5
+			c0-4.7,3.8-8.5,8.5-8.5h133.1c4.7,0,8.5,3.8,8.5,8.5v17.5C939,65.6,935.2,69.4,930.5,69.4z"/>
+		<rect x="802" y="45" fill="#ADADAD" width="95" height="14"/>
+		<polyline fill="none" stroke="#979797" stroke-linecap="round" stroke-miterlimit="10" points="911,50 917,56 923,50 		"/>
+	</g>
+	<g>
+		<rect x="221" y="119" fill="#979797" width="90" height="14"/>
+		<rect x="221" y="160.7" fill="#ADADAD" width="1268" height="1"/>
+		<g>
+			<g>
+				<g>
+					<circle fill="#979797" cx="784" cy="126" r="16"/>
+				</g>
+				<rect x="540" y="119.1" fill="#979797" width="212" height="14"/>
+			</g>
+			<g>
+				<g>
+					<circle fill="#979797" cx="942.7" cy="126" r="16"/>
+				</g>
+				<rect x="976.3" y="119.1" fill="#979797" width="212" height="14"/>
+			</g>
+			<g>
+				<rect x="846" y="119" fill="#979797" width="9" height="14"/>
+				<rect x="873" y="119" fill="#979797" width="9" height="14"/>
+				<g>
+					<circle fill="#979797" cx="864" cy="130" r="2.5"/>
+					<circle fill="#979797" cx="864" cy="122" r="2.5"/>
+				</g>
+			</g>
+		</g>
+		<polyline fill="none" stroke="#979797" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="1466,132.7 
+			1472,126.7 1466,120.7 		"/>
+	</g>
+	<g>
+		<rect x="221" y="191" fill="#979797" width="90" height="14"/>
+		<rect x="221" y="232.7" fill="#ADADAD" width="1268" height="1"/>
+		<g>
+			<g>
+				<g>
+					<circle fill="#979797" cx="784" cy="198" r="16"/>
+				</g>
+				<rect x="540" y="191.1" fill="#979797" width="212" height="14"/>
+			</g>
+			<g>
+				<g>
+					<circle fill="#979797" cx="942.7" cy="198" r="16"/>
+				</g>
+				<rect x="976.3" y="191.1" fill="#979797" width="212" height="14"/>
+			</g>
+			<g>
+				<rect x="846" y="191" fill="#979797" width="9" height="14"/>
+				<rect x="873" y="191" fill="#979797" width="9" height="14"/>
+				<g>
+					<circle fill="#979797" cx="864" cy="202" r="2.5"/>
+					<circle fill="#979797" cx="864" cy="194" r="2.5"/>
+				</g>
+			</g>
+		</g>
+		<polyline fill="none" stroke="#979797" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="1466,204.7 
+			1472,198.7 1466,192.7 		"/>
+	</g>
+</g>
+<g id="Groupphase">
+</g>
+</svg>
