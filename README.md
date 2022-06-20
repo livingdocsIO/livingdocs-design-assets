@@ -12,13 +12,11 @@ https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-ico
 <img src="https://user-images.githubusercontent.com/36032868/141268530-37d81061-9de9-4f98-9e40-6fec0228ba17.png" width="500px">
 
 
-## Metadata Icons
-### These Icons are not in use anymore and will be removed at a certain point
+## ~~Metadata Icons~~
+### These icons are not in use anymore and will be removed at a certain point
 https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/metadata-icons/
 - ~~Use assign these to your metadata elements.~~
 - ~~Find the full set in the Icon section over here: https://edit.livingdocs.io/styleguide.~~
-
-<img src="https://user-images.githubusercontent.com/36032868/141268664-2e0081a8-b99d-45c5-bdc9-11f675d0c7a7.png" width="500px">
 
 ## Placeholders
 https://livingdocsio.github.io/livingdocs-design-assets/docs/placeholders/
