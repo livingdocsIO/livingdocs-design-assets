@@ -13,9 +13,10 @@ https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-ico
 
 
 ## Metadata Icons
+### These Icons are not in use anymore and will be removed at a certain point
 https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/metadata-icons/
-- Use assign these to your metadata elements.
-- Find the full set in the Icon section over here: https://edit.livingdocs.io/styleguide.
+- ~~Use assign these to your metadata elements.~~
+- ~~Find the full set in the Icon section over here: https://edit.livingdocs.io/styleguide.~~
 
 <img src="https://user-images.githubusercontent.com/36032868/141268664-2e0081a8-b99d-45c5-bdc9-11f675d0c7a7.png" width="500px">
 
@@ -30,3 +31,4 @@ Please don't use any images from any of the following directories, as they are m
 - https://livingdocsio.github.io/livingdocs-design-assets/docs/mails
 - https://livingdocsio.github.io/livingdocs-design-assets/docs/site
 - https://livingdocsio.github.io/livingdocs-design-assets/docs/site-2021
+- https://livingdocsio.github.io/livingdocs-design-assets/docs/teams-integration
