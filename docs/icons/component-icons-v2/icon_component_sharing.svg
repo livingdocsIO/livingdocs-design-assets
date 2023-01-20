@@ -1,13 +1,13 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2434_5963)">
+<g clip-path="url(#clip0_2449_1472)">
 <rect width="1" height="18.2001" transform="matrix(0.451098 -0.896122 -0.892512 -0.443732 38.3264 38.6377)" fill="#D4D4D4"/>
-<rect width="1" height="18.2001" transform="matrix(0.436396 0.896122 -0.899792 0.443732 38.467 21.4995)" fill="#D4D4D4"/>
+<rect width="1" height="18.2001" transform="matrix(0.436396 0.896122 -0.899792 0.443732 38.467 21.499)" fill="#D4D4D4"/>
 <circle r="2" transform="matrix(1 0 -0.00820296 0.999966 22.2539 29.9989)" fill="white" stroke="#D4D4D4"/>
-<circle r="2" transform="matrix(1 0 -0.00820296 0.999966 37.3154 22.4994)" fill="white" stroke="#D4D4D4"/>
+<circle r="2" transform="matrix(1 0 -0.00820296 0.999966 37.3154 22.4989)" fill="white" stroke="#D4D4D4"/>
 <circle r="2" transform="matrix(1 0 -0.00820296 0.999966 37.1924 37.4989)" fill="white" stroke="#D4D4D4"/>
 </g>
 <defs>
-<clipPath id="clip0_2434_5963">
+<clipPath id="clip0_2449_1472">
 <rect width="60" height="60" fill="white"/>
 </clipPath>
 </defs>
