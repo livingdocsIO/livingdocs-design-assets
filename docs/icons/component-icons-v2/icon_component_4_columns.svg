@@ -1,20 +1,20 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2449_2267)">
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 9.79492 24.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 9.76208 28.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 9.72931 32.9985)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 21.0449 24.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 21.0121 28.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 20.9793 32.9985)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 32.2949 24.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 32.2621 28.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 32.2293 32.9985)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 43.5449 24.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 43.5121 28.999)" fill="#D4D4D4"/>
-<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 43.4793 32.9985)" fill="#D4D4D4"/>
+<g clip-path="url(#clip0_2471_2483)">
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 9.79492 24.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 9.76208 28.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 9.72931 32.9985)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 21.0449 24.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 21.0121 28.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 20.9793 32.9985)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 32.2949 24.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 32.2621 28.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 32.2293 32.9985)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 43.5449 24.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 43.5121 28.999)" fill="#C6C6C6"/>
+<rect width="6.25" height="2" transform="matrix(1 0 -0.00820296 0.999966 43.4793 32.9985)" fill="#C6C6C6"/>
 </g>
 <defs>
-<clipPath id="clip0_2449_2267">
+<clipPath id="clip0_2471_2483">
 <rect width="60" height="60" fill="white"/>
 </clipPath>
 </defs>
