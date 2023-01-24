@@ -1,18 +1,18 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2471_2425)">
+<g clip-path="url(#clip0_2480_2502)">
 <rect width="30" height="30" transform="matrix(1 0 -0.00820296 0.999966 14.877 14.9995)" fill="white"/>
-<mask id="mask0_2471_2425" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="14" y="14" width="31" height="31">
+<mask id="mask0_2480_2502" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="14" y="14" width="31" height="31">
 <rect x="0.495899" y="0.499983" width="29" height="29" transform="matrix(1 0 -0.00820296 0.999966 14.8811 14.9995)" fill="#F8F8F8" stroke="#B8B8B8"/>
 </mask>
-<g mask="url(#mask0_2471_2425)">
+<g mask="url(#mask0_2480_2502)">
 <circle r="3.5" transform="matrix(1 0 -0.00820296 0.999966 35.131 24.6659)" fill="#FCEDD4" stroke="#F2BC5E"/>
 <rect x="21.1631" y="48.9263" width="16.2446" height="16.2435" rx="2.5" transform="matrix(0.712883 -0.707107 0.701283 0.707107 -28.2349 29.2947)" fill="#E7ECF6" stroke="#7A97CE"/>
 <rect x="9.74535" y="43.3882" width="16.2446" height="23.2464" rx="2.5" transform="matrix(0.712883 -0.707107 0.701283 0.707107 -27.6293 19.5991)" fill="#E7ECF6" stroke="#7A97CE"/>
 </g>
-<rect x="0.495899" y="0.499983" width="29" height="29" transform="matrix(1 0 -0.00820296 0.999966 14.8811 14.9995)" stroke="#BBC9E6"/>
+<rect x="0.495899" y="0.499983" width="29" height="29" transform="matrix(1 0 -0.00820296 0.999966 14.8811 14.9995)" stroke="#7A97CE"/>
 </g>
 <defs>
-<clipPath id="clip0_2471_2425">
+<clipPath id="clip0_2480_2502">
 <rect width="60" height="60" fill="white"/>
 </clipPath>
 </defs>

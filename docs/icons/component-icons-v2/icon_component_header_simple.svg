@@ -1,12 +1,12 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2471_3383)">
-<rect width="20" height="2" transform="matrix(1 0 -0.00820296 0.999966 19.7539 29.999)" fill="#C6C6C6"/>
-<rect width="20" height="2" transform="matrix(1 0 -0.00820296 0.999966 19.7211 33.999)" fill="#C6C6C6"/>
-<rect width="20" height="2" transform="matrix(1 0 -0.00820296 0.999966 19.6883 37.9985)" fill="#C6C6C6"/>
+<g clip-path="url(#clip0_2480_3297)">
+<rect width="20" height="2" transform="matrix(1 0 -0.00820296 0.999966 19.7539 29.999)" fill="#BFBFBF"/>
+<rect width="20" height="2" transform="matrix(1 0 -0.00820296 0.999966 19.7211 33.999)" fill="#BFBFBF"/>
+<rect width="20" height="2" transform="matrix(1 0 -0.00820296 0.999966 19.6883 37.9985)" fill="#BFBFBF"/>
 <path d="M26.1703 27.9992L26.2359 19.9995H24.8273L24.8011 23.1949H21.2184L21.2446 19.9995H19.8359L19.7703 27.9992H21.179L21.2079 24.4753H24.7906L24.7616 27.9992H26.1703Z" fill="#6B6B6B"/>
 </g>
 <defs>
-<clipPath id="clip0_2471_3383">
+<clipPath id="clip0_2480_3297">
 <rect width="60" height="60" fill="white"/>
 </clipPath>
 </defs>
