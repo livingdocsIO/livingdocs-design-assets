@@ -9,8 +9,11 @@ https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-ico
 - Use these icons for labelling your components and for making your components list easily scannable.
 - Find the full set in the Icon section over here: https://edit.livingdocs.io/styleguide.
 
-<img src="https://user-images.githubusercontent.com/36032868/141268530-37d81061-9de9-4f98-9e40-6fec0228ba17.png" width="500px">
+<img src="https://user-images.githubusercontent.com/36032868/223463304-1c4fa252-381b-4163-aa27-625dd55893d9.png" width="500px">
 
+## ~~Older Component Icons~~
+### These icons (typically with the prefix `icon_component_`) are not in use anymore and will be removed at a certain point
+**Replace these icons with the new versions listed above**
 
 ## ~~Metadata Icons~~
 ### These icons are not in use anymore and will be removed at a certain point
