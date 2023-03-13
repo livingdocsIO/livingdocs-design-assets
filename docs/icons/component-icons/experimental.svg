@@ -1,12 +1,13 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2786_3680)">
-<line y1="-0.5" x2="39.6667" y2="-0.5" transform="matrix(1 0 -0.00820296 0.999966 10.1583 21.333)" stroke="#BFBFBF"/>
-<circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 19.7867 25.999)" fill="#E5F7EE" stroke="#72D1A0"/>
-<circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 34.8469 18.666)" fill="#E7ECF6" stroke="#7A97CE"/>
-<circle cx="5" cy="5" r="4.5" transform="matrix(1 0 -0.00820296 0.999966 29.7457 30.999)" fill="#F2EAF7" stroke="#B98BD3"/>
+<g clip-path="url(#clip0_2829_3766)">
+<circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 22.0408 35.665)" fill="#E5F7EE" stroke="#72D1A0"/>
+<path d="M31.6433 23.1658C31.6116 27.0316 28.4519 30.1655 24.5859 30.1655C20.7199 30.1655 17.6116 27.0316 17.6433 23.1658C17.675 19.2999 20.8347 16.166 24.7007 16.166C28.5667 16.166 31.675 19.2999 31.6433 23.1658Z" fill="#FCEDD4" stroke="#F2BC5E"/>
+<path d="M41.6843 18.1659C41.6753 19.2705 40.7725 20.1659 39.6679 20.1659C38.5634 20.1659 37.6753 19.2705 37.6843 18.1659C37.6934 17.0614 38.5962 16.166 39.7007 16.166C40.8053 16.166 41.6934 17.0614 41.6843 18.1659Z" fill="#E7ECF6" stroke="#7A97CE"/>
+<circle cx="5" cy="5" r="4.5" transform="matrix(1 0 -0.00820296 0.999966 32.0517 34.332)" fill="#F2EAF7" stroke="#B98BD3"/>
+<line x1="32.283" y1="44.3115" x2="42.0289" y2="34.6452" stroke="#B98BD3"/>
 </g>
 <defs>
-<clipPath id="clip0_2786_3680">
+<clipPath id="clip0_2829_3766">
 <rect width="60" height="60" fill="white"/>
 </clipPath>
 </defs>
