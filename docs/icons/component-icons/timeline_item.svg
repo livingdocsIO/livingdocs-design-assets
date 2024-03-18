@@ -3,7 +3,7 @@
 <rect width="1" height="5" transform="matrix(1 0 -0.00820296 0.999966 29.3359 19.999)" fill="#BFBFBF"/>
 <rect width="1" height="5" transform="matrix(1 0 -0.00820296 0.999966 29.2129 34.999)" fill="#BFBFBF"/>
 <circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 27.2744 27.499)" fill="white" stroke="#BFBFBF"/>
-<circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 27.3975 12.5)" fill="#FBE8E8" stroke="#E98080"/>
+<circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 27.3975 12.5)" fill="#fbeaed" stroke="#eb8a9a"/>
 <circle cx="2.5" cy="2.5" r="2" transform="matrix(1 0 -0.00820296 0.999966 27.1514 42.499)" fill="white" stroke="#BFBFBF"/>
 </g>
 <defs>
