@@ -1,5 +1,4 @@
 # livingdocs-design-assets
-
 This repository contains assets you may use in your downstream projects.
 Link image sources to these assets as you like.
 Please note that all of the files are subject to change and that Livingdocs will not be communicating any changes. Usually, however, changes are rare and minor.
@@ -7,19 +6,9 @@ Please note that all of the files are subject to change and that Livingdocs will
 ## Component Icons
 https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/
 - Use these icons for labelling your components and for making your components list easily scannable.
-- Find the full set in the Icon section over here: https://edit.livingdocs.io/styleguide.
+- The URL for example for "1 Teaser Row With Image" is https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/1_teaser_row_with_image.svg 
 
-<img src="https://user-images.githubusercontent.com/36032868/223463304-1c4fa252-381b-4163-aa27-625dd55893d9.png" width="500px">
-
-## ~~Older Component Icons~~
-### These icons (typically with the prefix `icon_component_`) are not in use anymore and will be removed at a certain point
-**Replace these icons with the new versions listed above**
-
-## ~~Metadata Icons~~
-### These icons are not in use anymore and will be removed at a certain point
-https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/metadata-icons/
-- ~~Use assign these to your metadata elements.~~
-- ~~Find the full set in the Icon section over here: https://edit.livingdocs.io/styleguide.~~
+![Insert Panel](https://github.com/user-attachments/assets/a4e32e71-dee7-4233-ac59-50f6b2c50958)
 
 ## Placeholders
 https://livingdocsio.github.io/livingdocs-design-assets/docs/placeholders/
