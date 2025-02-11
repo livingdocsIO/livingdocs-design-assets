@@ -1,0 +1,12 @@
+.k-button {
+  display: flex;
+  align-self: center;
+  padding: var(--s-third);
+  color: var(--c-interaction);
+  border: 1px solid currentColor;
+  border-radius: var(--r-one);
+
+  &.doc-component-highlight {
+    padding-right: 50px;
+  }
+}

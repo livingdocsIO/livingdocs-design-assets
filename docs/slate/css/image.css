@@ -1,0 +1,21 @@
+.k-image {
+  display: flex;
+  flex-direction: column;
+
+  .k-image__image {
+    width: 100%;
+  }
+
+  .k-image__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-sixth);
+    padding: var(--s-quarter) var(--s-third);
+    background-color: var(--c-grey);
+    color: var(--c-white);
+
+    a {
+      border-color: var(--c-white);
+    }
+  }
+}

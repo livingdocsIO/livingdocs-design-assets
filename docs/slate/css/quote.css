@@ -1,0 +1,5 @@
+.k-quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-sixth);
+}
