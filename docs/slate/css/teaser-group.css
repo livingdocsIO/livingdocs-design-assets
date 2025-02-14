@@ -1,0 +1,17 @@
+.k-teaser-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-half);
+  padding-bottom: var(--s-one);
+  border-bottom: 1px solid var(--c-black);
+
+  .k-teaser-group__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: var(--s-one);
+
+    @media screen and (max-width: 1120px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
