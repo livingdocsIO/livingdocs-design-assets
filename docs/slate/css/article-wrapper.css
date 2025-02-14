@@ -1,6 +1,6 @@
 .k-article-wrapper {
   width: calc(100% - 2 * var(--s-half));
-  max-width: 588px;
+  max-width: 708px;
   margin: var(--s-double) auto;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
     max-width: 100%;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1120px) {
     margin-top: var(--s-half);
     margin-bottom: var(--s-half);
   }
