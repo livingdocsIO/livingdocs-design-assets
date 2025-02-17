@@ -1,16 +1,20 @@
 .k-article-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: var(--s-one);
   width: calc(100% - 2 * var(--s-half));
   max-width: 708px;
   margin: var(--s-double) auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-one);
 
   font-family: "Besley", serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
   line-height: 140%;
+
+  & > * {
+    grid-column: span 8;
+  }
 
   a {
     color: inherit;
