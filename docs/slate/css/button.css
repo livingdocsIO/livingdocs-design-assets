@@ -11,7 +11,7 @@
   }
   
   &.doc-component-highlight {
-    k-button__button {
+    .k-button__button {
       padding-right: 50px;
     }
   }
