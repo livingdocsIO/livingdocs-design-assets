@@ -280,7 +280,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: var(--c-black);
+      background-color: var(--c-grey);
     }
 
     .k-teaser__render {
