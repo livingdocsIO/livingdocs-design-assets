@@ -8,6 +8,7 @@
     color: var(--c-interaction);
     border: 1px solid currentColor;
     border-radius: var(--r-one);
+    transition: padding-right 0.5s;
   }
   
   &.doc-component-highlight {
