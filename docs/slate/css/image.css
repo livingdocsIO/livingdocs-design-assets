@@ -18,4 +18,20 @@
       border-color: var(--c-white);
     }
   }
+
+  &.k-image--large {
+    --k-image-size--large: 1080px;
+    width: var(--k-image-size--large);
+    margin-left: calc((100% - var(--k-image-size--large)) / 2);
+    margin-right: calc((100% - var(--k-image-size--large)) / 2);
+    
+    @media screen and (max-width: 1120px) {
+      --k-image-size--large: 100vw;
+    }
+
+    .k-image__info {
+      padding-right: max(calc((100% - 708px) / 2), var(--s-half));
+      padding-left: max(calc((100% - 708px) / 2), var(--s-half));
+    }
+  }
 }

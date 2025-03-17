@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="350" viewBox="0 0 620 350"
+  preserveAspectRatio="none">
+  <rect width="620" height="350" fill="#eaeaea" />
+  <line x1="0" y1="0" x2="620" y2="350" vector-effect="non-scaling-stroke"
+    style="stroke:#fff;stroke-width:2px" />
+  <line x1="620" y1="0" x2="0" y2="350" vector-effect="non-scaling-stroke"
+    style="stroke:#fff;stroke-width:2px" />
+</svg>

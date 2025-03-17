@@ -1,0 +1,30 @@
+.k-video {
+  display: flex;
+  flex-direction: column;
+
+  .k-video__placeholder {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: calc( 16 / 9);
+    background-image: url(../assets/placeholder-video.svg);
+    background-size: 100% 100%;
+  }
+
+  .k-video__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-sixth);
+    padding: var(--s-quarter) var(--s-third);
+    background-color: var(--c-grey);
+    color: var(--c-white);
+
+    a {
+      border-color: var(--c-white);
+    }
+  }
+
+  .vjs-theme-fantasy {
+    --vjs-theme-fantasy--primary: var(--c-interaction);
+  }
+}
