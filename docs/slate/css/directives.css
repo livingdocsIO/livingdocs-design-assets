@@ -1,0 +1,33 @@
+[doc-include]:empty {
+  background: #eaeaea;
+  border: 0;
+  outline: 0;
+
+  &::after,
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--li-bsu-double);
+    height: 2px;
+    background: var(--li-c-white);
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    width: 2px;
+    height: var(--li-bsu-double);
+  }
+}
+
+[doc-container]:empty {
+  border: 0;
+  outline: 2px dashed var(--li-c-gray-6);
+
+  &::after,
+  &::before {
+    display: none;
+  }
+}
