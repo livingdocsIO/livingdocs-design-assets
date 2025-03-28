@@ -1,0 +1,5 @@
+<svg fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#eaeaea" />
+  <line x1="50%" y1="calc(50% - 24px)" x2="50%" y2="calc(50% + 24px)" stroke="#fff" stroke-width="2" />
+  <line y1="50%" x1="calc(50% - 24px)" y2="50%" x2="calc(50% + 24px)" stroke="#fff" stroke-width="2" />
+</svg>

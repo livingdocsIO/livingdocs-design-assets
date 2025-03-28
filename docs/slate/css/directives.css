@@ -1,24 +1,11 @@
 [doc-include]:empty {
-  background: #eaeaea;
+  background-image: url(../assets/placeholder-video.svg);
+  background-size: 100% 100%;
   border: 0;
   outline: 0;
 
-  &::after,
   &::before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: var(--li-bsu-double);
-    height: 2px;
-    background: var(--li-c-white);
-    transform: translate(-50%, -50%);
-  }
-
-  &::after {
-    width: 2px;
-    height: var(--li-bsu-double);
+    display: none;
   }
 }
 
