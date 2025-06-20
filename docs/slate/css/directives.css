@@ -2,10 +2,13 @@
   background-image: url(../assets/placeholder-include.svg);
   background-size: 100% 100%;
   border: 0;
-  outline: 0;
 
   &::before {
     display: none;
+  }
+
+  &:not(.doc-component-highlight) {
+    outline: 0;
   }
 }
 
