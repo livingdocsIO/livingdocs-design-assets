@@ -1,16 +1,16 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2786_2750)">
-<mask id="path-1-outside-1_2786_2750" maskUnits="userSpaceOnUse" x="13.6227" y="14.999" width="31.2543" height="30.999" fill="black">
-<rect fill="white" x="13.6227" y="14.999" width="31.2543" height="30.999"/>
-<path d="M14.877 14.999H44.877L44.6309 44.998H14.6309L14.877 14.999Z"/>
+<g clip-path="url(#clip0_256_3154)">
+<mask id="path-1-outside-1_256_3154" maskUnits="userSpaceOnUse" x="13.6227" y="14.9995" width="31.2543" height="30.999" fill="black">
+<rect fill="white" x="13.6227" y="14.9995" width="31.2543" height="30.999"/>
+<path d="M14.877 14.9995H44.877L44.6309 44.9985H14.6309L14.877 14.9995Z"/>
 </mask>
-<path d="M14.877 14.999H44.877L44.6309 44.998H14.6309L14.877 14.999Z" fill="white"/>
-<path d="M14.6309 44.998H13.6309L13.6227 45.998H14.6227L14.6309 44.998ZM44.6391 43.998H14.6391L14.6227 45.998H44.6227L44.6391 43.998ZM15.6309 44.998L15.877 14.999H13.877L13.6309 44.998H15.6309Z" fill="#BFBFBF" mask="url(#path-1-outside-1_2786_2750)"/>
-<rect x="0.495899" y="0.499983" width="29" height="29" transform="matrix(1 0 -0.00820296 0.999966 14.8811 14.999)" fill="white" stroke="#BFBFBF"/>
-<rect x="0.495899" y="0.499983" width="19.6667" height="4" transform="matrix(1 0 -0.00820296 0.999966 19.84 19.999)" fill="#e4f8ef" stroke="#6bd8a7"/>
+<path d="M14.877 14.9995H44.877L44.6309 44.9985H14.6309L14.877 14.9995Z" fill="white"/>
+<path d="M14.6309 44.9985H13.6309L13.6227 45.9985H14.6227L14.6309 44.9985ZM44.6309 44.9985L44.6391 43.9985H14.6391L14.6309 44.9985L14.6227 45.9985H44.6227L44.6309 44.9985ZM14.6309 44.9985H15.6309L15.877 14.9995H14.877H13.877L13.6309 44.9985H14.6309Z" fill="#ABABAB" mask="url(#path-1-outside-1_256_3154)"/>
+<rect x="0.495899" y="0.499983" width="29" height="29" transform="matrix(1 0 -0.00820296 0.999966 14.8811 14.9995)" fill="white" stroke="#ABABAB"/>
+<rect x="0.495899" y="0.499983" width="19.6667" height="4" transform="matrix(1 0 -0.00820296 0.999966 19.84 19.9995)" fill="#E7F6EF" stroke="#76CAA5"/>
 </g>
 <defs>
-<clipPath id="clip0_2786_2750">
+<clipPath id="clip0_256_3154">
 <rect width="60" height="60" fill="white"/>
 </clipPath>
 </defs>
