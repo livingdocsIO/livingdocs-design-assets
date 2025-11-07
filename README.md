@@ -8,7 +8,7 @@ https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-ico
 - Use these icons for labelling your components and for making your components list easily scannable.
 - The URL for example for "1 Teaser Row With Image" is https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/1_teaser_row_with_image.svg 
 
-![Insert Panel](https://github.com/user-attachments/assets/a4e32e71-dee7-4233-ac59-50f6b2c50958)
+<img width="344" alt="Insert Panel" src="https://github.com/user-attachments/assets/49b9be46-bcd3-4e0b-a1fa-74d27d9a22b1" />
 
 ## Placeholders
 https://livingdocsio.github.io/livingdocs-design-assets/docs/placeholders/
