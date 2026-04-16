@@ -24,12 +24,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 19.0705%;
+        width: 7.833%;
         height: auto;
         opacity: 0;
         pointer-events: none;
         z-index: 2;
-        transform-origin: 84% 18%;
+        transform-origin: 100% 0%;
       }
 
       #cursor-click {
@@ -68,12 +68,12 @@
       }));
       const cursorKeyframes = [
         { at: 0.5,  left: "28%", top: "16%", autoAlpha: 0, rotation:   30 },
-        { at: 1.25, left: "40%", top: "32%", autoAlpha: 1, rotation:   0, ease: "power1.out" },
-        { at: 2,    left: "40%", top: "32%", autoAlpha: 1, rotation:   0 },
+        { at: 1.25, left: "40%", top: "36%", autoAlpha: 1, rotation:   0, ease: "power1.out" },
+        { at: 2,    left: "40%", top: "36%", autoAlpha: 1, rotation:   0 },
         { at: 3,    left: "49%", top: "46%", autoAlpha: 1, rotation:  15 },
-        { at: 4,    left: "35%", top: "68%", autoAlpha: 1, rotation: 0 },
-        { at: 5,    left: "35%", top: "68%", autoAlpha: 1, rotation: 0 },
-        { at: 6,    left: "50%", top: "70%", autoAlpha: 0, rotation:  -30, ease: "power1.out" },
+        { at: 4,    left: "70%", top: "72%", autoAlpha: 1, rotation: 0 },
+        { at: 5,    left: "70%", top: "72%", autoAlpha: 1, rotation: 0 },
+        { at: 6,    left: "50%", top: "78%", autoAlpha: 0, rotation:  -30, ease: "power1.out" },
       ];
       const cursorClickTimes = [1.375, 4.125];
       const loopDuration = stageSequence.reduce((sum, frame) => sum + frame.duration, 0);
@@ -98,10 +98,28 @@
       }
 
       function triggerCursorClick() {
-        const animationBounds = animation.getBoundingClientRect();
-        const cursorBounds = cursorImage.getBoundingClientRect();
-        const left = cursorBounds.left - animationBounds.left + cursorBounds.width * 0.84;
-        const top = cursorBounds.top - animationBounds.top + cursorBounds.height * 0.18;
+        const left = cursorImage.offsetLeft + cursorImage.offsetWidth;
+        const top = cursorImage.offsetTop;
+
+        gsap.killTweensOf(cursorImage, "x,y,scale");
+        gsap.fromTo(
+          cursorImage,
+          {
+            x: 0,
+            y: 0,
+            scale: 1,
+          },
+          {
+            duration: 0.09,
+            x: -2,
+            y: 2,
+            scale: 0.92,
+            ease: "power2.out",
+            repeat: 1,
+            yoyo: true,
+            clearProps: "x,y",
+          }
+        );
 
         gsap.killTweensOf(cursorClick);
         gsap.set(cursorClick, {
