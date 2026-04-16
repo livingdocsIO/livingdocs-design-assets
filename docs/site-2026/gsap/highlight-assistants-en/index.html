@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: transparent;
+      }
+
+      #animation {
+        position: relative;
+        width: 100%;
+      }
+
+      #stage-image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      #cursor-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 19.0705%;
+        height: auto;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 2;
+        transform-origin: 84% 18%;
+      }
+
+      #cursor-click {
+        position: absolute;
+        width: 3.2%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        background-color: #141414;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="animation">
+      <img id="stage-image" src="assets/stage-1.svg" alt="Animated stage illustration" />
+      <img id="cursor-image" src="assets/user-1.svg" alt="" aria-hidden="true" />
+      <div id="cursor-click" aria-hidden="true"></div>
+    </div>
+
+    <script>
+      const animation = document.getElementById("animation");
+      const stageImage = document.getElementById("stage-image");
+      const cursorImage = document.getElementById("cursor-image");
+      const cursorClick = document.getElementById("cursor-click");
+      const cursorSource = "assets/user-1.svg";
+      const stageFadeInDuration = 0.4;
+      const stageFadeOutDuration = 0.4;
+      const stageDurations = [1, 0.75, 0.0, 2, 1, 0.0, 1.5];
+      const stageSequence = stageDurations.map((duration, index, allDurations) => ({
+        at: allDurations.slice(0, index).reduce((sum, value) => sum + value, 0),
+        src: `assets/stage-${index + 1}.svg`,
+        duration,
+      }));
+      const cursorKeyframes = [
+        { at: 0.5,  left: "28%", top: "16%", autoAlpha: 0, rotation:   30 },
+        { at: 1.25, left: "40%", top: "32%", autoAlpha: 1, rotation:   0, ease: "power1.out" },
+        { at: 2,    left: "40%", top: "32%", autoAlpha: 1, rotation:   0 },
+        { at: 3,    left: "49%", top: "46%", autoAlpha: 1, rotation:  15 },
+        { at: 4,    left: "35%", top: "68%", autoAlpha: 1, rotation: 0 },
+        { at: 5,    left: "35%", top: "68%", autoAlpha: 1, rotation: 0 },
+        { at: 6,    left: "50%", top: "70%", autoAlpha: 0, rotation:  -30, ease: "power1.out" },
+      ];
+      const cursorClickTimes = [1.375, 4.125];
+      const loopDuration = stageSequence.reduce((sum, frame) => sum + frame.duration, 0);
+
+      stageSequence.forEach(({ src }) => {
+        const preloadedImage = new Image();
+        preloadedImage.src = src;
+      });
+
+      const preloadedCursor = new Image();
+      preloadedCursor.src = cursorSource;
+
+      gsap.set(stageImage, { autoAlpha: 0 });
+
+      function applyCursorState(frame) {
+        gsap.set(cursorImage, {
+          left: frame.left,
+          top: frame.top,
+          autoAlpha: frame.autoAlpha,
+          rotation: frame.rotation ?? 0,
+        });
+      }
+
+      function triggerCursorClick() {
+        const animationBounds = animation.getBoundingClientRect();
+        const cursorBounds = cursorImage.getBoundingClientRect();
+        const left = cursorBounds.left - animationBounds.left + cursorBounds.width * 0.84;
+        const top = cursorBounds.top - animationBounds.top + cursorBounds.height * 0.18;
+
+        gsap.killTweensOf(cursorClick);
+        gsap.set(cursorClick, {
+          left,
+          top,
+          scale: 0.4,
+          autoAlpha: 2,
+        });
+        gsap.to(cursorClick, {
+          duration: 0.35,
+          scale: 1.4,
+          autoAlpha: 0,
+          ease: "power1.out",
+        });
+      }
+
+      const timeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+
+      stageSequence.forEach(({ at, src }) => {
+        timeline.call(() => {
+          stageImage.src = src;
+        }, [], at);
+      });
+
+      timeline.to(
+        stageImage,
+        {
+          duration: stageFadeInDuration,
+          autoAlpha: 1,
+          ease: "power1.out",
+        },
+        0
+      );
+
+      timeline.to(
+        stageImage,
+        {
+          duration: stageFadeOutDuration,
+          autoAlpha: 0,
+          ease: "power1.in",
+        },
+        Math.max(loopDuration - stageFadeOutDuration, stageFadeInDuration)
+      );
+
+      applyCursorState(cursorKeyframes[0]);
+
+      cursorKeyframes.slice(1).forEach((frame, index) => {
+        const previousFrame = cursorKeyframes[index];
+        const duration = frame.at - previousFrame.at;
+
+        if (duration <= 0) {
+          timeline.call(() => {
+            applyCursorState(frame);
+          }, [], frame.at);
+          return;
+        }
+
+        timeline.to(
+          cursorImage,
+          {
+            duration,
+            left: frame.left,
+            top: frame.top,
+            autoAlpha: frame.autoAlpha,
+            rotation: frame.rotation ?? 0,
+            ease: frame.ease || "none",
+          },
+          previousFrame.at
+        );
+      });
+
+      cursorClickTimes.forEach((at) => {
+        timeline.call(() => {
+          triggerCursorClick();
+        }, [], at);
+      });
+
+      timeline.call(() => {
+        stageImage.src = stageSequence[0].src;
+        gsap.set(stageImage, { autoAlpha: 0 });
+        applyCursorState(cursorKeyframes[0]);
+        gsap.set(cursorClick, { autoAlpha: 0, scale: 0.4 });
+      }, [], loopDuration);
+    </script>
+  </body>
+</html>
