@@ -3,6 +3,15 @@
 ## Purpose
 This is a reusable playbook for building and maintaining timeline-based UI animations with GSAP.
 Use it as a handover note for future projects, not only for one specific animation.
+Keep it generic enough for future variants that may differ in staging, timing, and assets.
+
+## Scope for Website Iframes
+- These animations are meant to live inside iframes on the website.
+- The animation itself should always fill the full available iframe width.
+- Height should remain automatic from the artwork proportions inside the iframe.
+- The wrapper page defines iframe size and aspect ratio.
+- Keep the animation document self-contained: no page chrome, no extra spacing, no dependency on parent-page layout.
+- Future animations may vary in structure, but the simple cursor and click feedback should be treated as the default reusable interaction language unless a project clearly needs something else.
 
 ## Core Pattern
 - Build one master GSAP timeline that coordinates all moving parts.
@@ -12,13 +21,24 @@ Use it as a handover note for future projects, not only for one specific animati
 
 ## Recommended Architecture
 - One configuration block for timing constants.
+- One sequence array for stage or scene swaps when the background changes over time.
 - One keyframe array per animated actor.
+- One event-time array for interaction triggers such as clicks, pulses, or highlights.
 - One helper for applying immediate state (`gsap.set`).
 - One helper for event-style feedback (for example click ripple/bump).
 - One timeline assembly section where all `.to(...)` and `.call(...)` are registered.
 
+## Layout Rules
+- Use a single relative-positioned root container with width set to `100%`.
+- The main stage asset should render at `width: 100%` and `height: auto`.
+- Overlay actors should be positioned relative to that stage.
+- Prefer percentage-based sizes and positions for overlays so motion scales with the artwork.
+- Keep iframe backgrounds transparent unless the animation intentionally owns its background color.
+
 ## Timeline Design Principles
 - Use absolute timeline times for synchronization points.
+- Prefer one shared timing map as the single source of truth for the whole animation.
+- Let stage swaps, actor keyframes, click events, fades, and loop boundaries all reference that same timing map.
 - Use relative tween durations for smooth interpolation between states.
 - Keep easing intentional:
   - positional travel: mostly linear/none unless a specific feel is needed
@@ -28,6 +48,7 @@ Use it as a handover note for future projects, not only for one specific animati
 
 ## Keyframe Strategy
 - Define keyframes as data objects, not hard-coded individual tweens.
+- Treat scene or stage changes as data as well when they happen on a schedule.
 - Suggested fields:
   - `at`
   - `left`, `top` (or `x`, `y`)
@@ -37,10 +58,28 @@ Use it as a handover note for future projects, not only for one specific animati
 - Convert keyframes to tweens in a loop to keep maintenance simple.
 - For non-positive gaps between keyframes, use immediate `timeline.call(...)`/`gsap.set(...)`.
 
+## Sequence Model
+- Separate long-lived visual concerns into distinct data sets.
+- A common setup is:
+  - one `times` object with named absolute positions in the timeline
+  - one `stageSequence` array for artwork swaps or scene states
+  - one `cursorKeyframes` array for cursor motion and visibility
+  - one `eventTimes` array for click or emphasis moments
+- Compute absolute `at` values once and let the timeline consume those values.
+- Prefer deriving `stageSequence`, `cursorKeyframes`, and `eventTimes` from the shared `times` object instead of mixing raw intervals and fixed time points in different places.
+- If a future animation needs a different structure, keep the same principle: animation data first, timeline wiring second.
+
+## Timing Naming Strategy
+- Keep timing names moderately semantic.
+- Good names describe the animation beat or role, for example `cursorIntro`, `click1`, `stage5`, or `loopEnd`.
+- Avoid names that are too generic to be useful, but also avoid locking timing names too tightly to one product story too early.
+- Only move to deeper domain-specific naming once the animation concept is stable enough that those names will age well.
+
 ## Anchor and Coordinate Rules
 - Always define one canonical anchor for interaction effects (cursor tip, center point, etc.).
 - Keep transform origin aligned with that anchor.
 - Compute effect coordinates from runtime element geometry (for example `offsetLeft/offsetTop/offsetWidth/offsetHeight`).
+- For the standard cursor pattern, treat the click point as the cursor tip rather than the visual center of the cursor asset.
 - If the asset shape changes, retune only:
   - size
   - transform origin
@@ -55,8 +94,14 @@ Use it as a handover note for future projects, not only for one specific animati
 
 ## Asset and Loading Practices
 - Preload image assets used in timeline swaps.
+- Preload the cursor asset too if it is swapped or faded in after load.
 - Keep file naming predictable for sequenced frames.
 - Avoid runtime stalls by preparing all visual states before first visible frame.
+
+## Accessibility and Semantics
+- Keep meaningful stage imagery accessible with an appropriate `alt` when needed.
+- Mark decorative animation layers such as cursor and click effects as hidden from assistive technology.
+- Do not let purely decorative layers capture pointer events.
 
 ## Reset and Loop Safety
 - At loop end, restore all baseline states explicitly.
@@ -65,6 +110,7 @@ Use it as a handover note for future projects, not only for one specific animati
 
 ## Responsiveness and Robustness
 - Size moving overlays proportionally when possible (percent-based width/position).
+- Verify that the composition still works when the iframe becomes narrower while preserving full width.
 - Re-test anchor accuracy after viewport changes and on mobile breakpoints.
 - Keep interaction feedback subtle enough to avoid jitter on small screens.
 
@@ -73,27 +119,65 @@ Use it as a handover note for future projects, not only for one specific animati
   - path (positions)
   - timing (keyframe `at`)
   - feel (ease, bump strength, ripple size)
+- When tuning timing, prefer adjusting named values in the shared timing map first.
 - Validate by watching at normal speed and at reduced speed.
 - Prioritize consistency over dramatic motion.
 
 ## Reuse Checklist
 - Replace assets and update selectors.
+- Confirm the iframe still fills full width and derives height from the stage artwork.
 - Reconfirm anchor definition and transform origin.
+- Reconfirm that click feedback is anchored to the intended cursor tip.
+- Decide which parts are shared across language variants and which are locale-specific.
 - Populate project-specific keyframes.
+- Populate project-specific stage/scene sequence data if used.
 - Set click/event timestamps or trigger conditions.
 - Verify loop reset has no jumps.
 - Verify all effects align with visible interaction points.
+
+## Variant Management
+- Keep animation mechanics shared across language variants whenever possible.
+- Treat copy, embedded labels, and locale-specific artwork as replaceable assets, not as reasons to fork the animation logic too early.
+- Name files and folders clearly by locale, for example `-en`, `-de`, while keeping the structure parallel between variants.
+- If a locale version needs timing or layout adjustments, document only the delta in a small per-project note.
+
+## Maintenance Note
+- This document should remain the baseline reference for future GSAP iframe animations in this repository.
+- For now, keep each animation self-contained and observe patterns before extracting shared helpers or shared assets.
+- Revisit shared functions and reusable asset conventions only after the animation pool is large enough to show stable repetition.
+- Useful improvements are welcome, but ask for confirmation before making discretionary changes that go beyond the immediate project need.
 
 ## Optional Template Snippet
 Use this shape as a starting point in new projects:
 
 ```js
-const keyframes = [
-  { at: 0.0, left: "20%", top: "20%", autoAlpha: 0, rotation: 20 },
-  { at: 0.8, left: "35%", top: "30%", autoAlpha: 1, rotation: 0, ease: "power1.out" },
-  { at: 1.6, left: "50%", top: "45%", autoAlpha: 1, rotation: 8 },
-  { at: 2.4, left: "65%", top: "60%", autoAlpha: 0, rotation: -20, ease: "power1.in" },
+const times = {
+  stage1: 0.0,
+  stage2: 1.0,
+  stage3: 2.5,
+  cursorIntro: 0.4,
+  cursorFocus1: 0.8,
+  cursorHold1: 1.6,
+  cursorExit: 2.4,
+  click1: 1.0,
+  click2: 2.05,
+  loopEnd: 3.0,
+};
+
+const stageSequence = [
+  { at: times.stage1, src: "assets/stage-1.svg" },
+  { at: times.stage2, src: "assets/stage-2.svg" },
+  { at: times.stage3, src: "assets/stage-3.svg" },
 ];
+
+const cursorKeyframes = [
+  { at: times.cursorIntro, left: "20%", top: "20%", autoAlpha: 0, rotation: 20 },
+  { at: times.cursorFocus1, left: "35%", top: "30%", autoAlpha: 1, rotation: 0, ease: "power1.out" },
+  { at: times.cursorHold1, left: "50%", top: "45%", autoAlpha: 1, rotation: 8 },
+  { at: times.cursorExit, left: "65%", top: "60%", autoAlpha: 0, rotation: -20, ease: "power1.in" },
+];
+
+const eventTimes = [times.click1, times.click2];
 ```
 
 Keep this document generic and append project-specific numbers in a separate per-project note.
