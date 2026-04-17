@@ -34,6 +34,7 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 - Overlay actors should be positioned relative to that stage.
 - Prefer percentage-based sizes and positions for overlays so motion scales with the artwork.
 - Keep iframe backgrounds transparent unless the animation intentionally owns its background color.
+- Because the animation fills the full viewport width and the wrapper page defines the actual iframe size, cursor and click indicator percentages must be calibrated relative to the stage artwork dimensions, not assumed to be the same across animations. Derive the correct percentage by comparing the desired visual size against the stage width.
 
 ## Timeline Design Principles
 - Use absolute timeline times for synchronization points.
@@ -77,9 +78,13 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 
 ## Anchor and Coordinate Rules
 - Always define one canonical anchor for interaction effects (cursor tip, center point, etc.).
-- Keep transform origin aligned with that anchor.
-- Compute effect coordinates from runtime element geometry (for example `offsetLeft/offsetTop/offsetWidth/offsetHeight`).
-- For the standard cursor pattern, treat the click point as the cursor tip rather than the visual center of the cursor asset.
+- Keep `transform-origin` in CSS aligned with the cursor tip position in the asset.
+- Define a matching `cursorAnchor` object with `x` and `y` as fractions (0–1) of the element's width/height.
+- Compute the click indicator position from `offsetLeft + offsetWidth * cursorAnchor.x` and `offsetTop + offsetHeight * cursorAnchor.y`.
+- The bump direction on click should push away from the tip, not toward it:
+  - tip at top-left (0% 0%): bump nudges `x: +, y: +`
+  - tip at top-right (100% 0%): bump nudges `x: -, y: +`
+  - adjust for other anchor positions accordingly
 - If the asset shape changes, retune only:
   - size
   - transform origin
@@ -97,6 +102,14 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 - Preload the cursor asset too if it is swapped or faded in after load.
 - Keep file naming predictable for sequenced frames.
 - Avoid runtime stalls by preparing all visual states before first visible frame.
+
+## Drop-in Overlay Pattern
+- A drop-in overlay is a result image that fades and scales onto the stage to reveal the end state of an interaction.
+- Layer it above the stage image with `position: absolute; inset: 0`.
+- Start it hidden and oversized, for example `autoAlpha: 0, scale: 1.3`.
+- Animate to `autoAlpha: 1, scale: 1` with a fast ease-out to give the impression of something snapping into place.
+- Reset scale and opacity in the loop reset call alongside the stage image.
+- Name the asset `drop-in-stage-N.svg` where N matches the stage it overlays.
 
 ## Accessibility and Semantics
 - Keep meaningful stage imagery accessible with an appropriate `alt` when needed.
@@ -140,6 +153,15 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 - Treat copy, embedded labels, and locale-specific artwork as replaceable assets, not as reasons to fork the animation logic too early.
 - Name files and folders clearly by locale, for example `-en`, `-de`, while keeping the structure parallel between variants.
 - If a locale version needs timing or layout adjustments, document only the delta in a small per-project note.
+
+## New Animation Setup
+- Create each new animation under `docs/site-2026/gsap/`.
+- Use folder names with locale suffixes, for example `<animation-name>-en`.
+- Add the `highlight-` prefix when the animation belongs to the highlight family, for example `highlight-media-center-en`.
+- Not all animations need the `highlight-` prefix.
+- Inside each new animation folder, create:
+  - an empty `index.html`
+  - an empty `assets/` folder for incoming files
 
 ## Maintenance Note
 - This document should remain the baseline reference for future GSAP iframe animations in this repository.
