@@ -60,23 +60,43 @@
       const cursorSource = "assets/user-1.svg";
       const stageFadeInDuration = 0.4;
       const stageFadeOutDuration = 0.4;
-      const stageDurations = [1, 0.75, 0.0, 2, 1, 0.0, 1.5];
-      const stageSequence = stageDurations.map((duration, index, allDurations) => ({
-        at: allDurations.slice(0, index).reduce((sum, value) => sum + value, 0),
-        src: `assets/stage-${index + 1}.svg`,
-        duration,
-      }));
-      const cursorKeyframes = [
-        { at: 0.5,  left: "28%", top: "16%", autoAlpha: 0, rotation:   30 },
-        { at: 1.25, left: "40%", top: "36%", autoAlpha: 1, rotation:   0, ease: "power1.out" },
-        { at: 2,    left: "40%", top: "36%", autoAlpha: 1, rotation:   0 },
-        { at: 3,    left: "49%", top: "46%", autoAlpha: 1, rotation:  15 },
-        { at: 4,    left: "70%", top: "72%", autoAlpha: 1, rotation: 0 },
-        { at: 5,    left: "70%", top: "72%", autoAlpha: 1, rotation: 0 },
-        { at: 6,    left: "50%", top: "78%", autoAlpha: 0, rotation:  -30, ease: "power1.out" },
+      const times = {
+        stage1: 0.0,
+        cursorIntro: 0.5,
+        stage2: 1.0,
+        cursorFocus1: 1.25,
+        click1: 1.875,
+        stage3: 2.25,
+        stage4: 2.25,
+        cursorHold1: 3.75,
+        stage5: 4.25,
+        cursorFocus2: 4.5,
+        click2: 4.625,
+        cursorHold2: 5.0,
+        stage6: 5.25,
+        stage7: 5.25,
+        cursorExit: 5.5,
+        loopEnd: 6.75,
+      };
+      const stageSequence = [
+        { at: times.stage1, src: "assets/stage-1.svg" },
+        { at: times.stage2, src: "assets/stage-2.svg" },
+        { at: times.stage3, src: "assets/stage-3.svg" },
+        { at: times.stage4, src: "assets/stage-4.svg" },
+        { at: times.stage5, src: "assets/stage-5.svg" },
+        { at: times.stage6, src: "assets/stage-6.svg" },
+        { at: times.stage7, src: "assets/stage-7.svg" },
       ];
-      const cursorClickTimes = [1.375, 4.125];
-      const loopDuration = stageSequence.reduce((sum, frame) => sum + frame.duration, 0);
+      const cursorKeyframes = [
+        { at: times.cursorIntro, left: "28%", top: "16%", autoAlpha: 0, rotation:   30 },
+        { at: times.cursorFocus1, left: "40%", top: "36%", autoAlpha: 1, rotation:   0, ease: "power1.out" },
+        { at: times.cursorHold1, left: "40%", top: "36%", autoAlpha: 1, rotation:   0 },
+        { at: times.cursorFocus2, left: "70%", top: "74%", autoAlpha: 1, rotation:  -30, ease: "power1.out" },
+        { at: times.cursorHold2, left: "70%", top: "74%", autoAlpha: 1, rotation:  -30 },
+        { at: times.cursorExit, left: "70%", top: "76%", autoAlpha: 0, rotation:  -30, ease: "power1.out" },
+      ];
+      const cursorClickTimes = [times.click1, times.click2];
+      const loopDuration = times.loopEnd;
 
       stageSequence.forEach(({ src }) => {
         const preloadedImage = new Image();
@@ -113,7 +133,7 @@
             duration: 0.09,
             x: -2,
             y: 2,
-            scale: 0.92,
+            scale: 0.8,
             ease: "power2.out",
             repeat: 1,
             yoyo: true,
@@ -161,7 +181,7 @@
           autoAlpha: 0,
           ease: "power1.in",
         },
-        Math.max(loopDuration - stageFadeOutDuration, stageFadeInDuration)
+        Math.max(times.loopEnd - stageFadeOutDuration, stageFadeInDuration)
       );
 
       applyCursorState(cursorKeyframes[0]);
@@ -202,7 +222,7 @@
         gsap.set(stageImage, { autoAlpha: 0 });
         applyCursorState(cursorKeyframes[0]);
         gsap.set(cursorClick, { autoAlpha: 0, scale: 0.4 });
-      }, [], loopDuration);
+      }, [], times.loopEnd);
     </script>
   </body>
 </html>
