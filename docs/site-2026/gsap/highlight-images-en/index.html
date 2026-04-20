@@ -1,0 +1,374 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				background: transparent;
+			}
+
+			#animation {
+				position: relative;
+				width: 100%;
+			}
+
+			#stage-image,
+			.overlay-image,
+			.user-layer {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+
+			#stage-image {
+				position: relative;
+				z-index: 1;
+			}
+
+			.overlay-image {
+				position: absolute;
+				inset: 0;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 2;
+				transform-origin: 50% 50%;
+			}
+
+			.dragged-image {
+				position: absolute;
+				/* 314 / 119 = 263.87% (dragged asset width relative to Leo wrapper width) */
+				width: 263.87%;
+				aspect-ratio: 314 / 74;
+				left: -20.4%;
+				top: -62.1%;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 0;
+				transform-origin: 50% 50%;
+			}
+
+			.user-actor {
+				position: absolute;
+				/* 119 / 758 = 15.70% (user composite asset against full stage width) */
+				width: 15.70%;
+				aspect-ratio: 119 / 83;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 3;
+			}
+
+			.user-layer {
+				position: absolute;
+				z-index: 1;
+			}
+
+			#leo-cursor {
+				left: 0%;
+				top: 0%;
+				width: 39.5%;
+				height: 63.9%;
+				transform-origin: 30% 100%;
+			}
+
+			#leo-label {
+				left: 53%;
+				top: 58.1%;
+				width: 46.2%;
+				height: 41%;
+			}
+
+			#zoe-cursor {
+				left: 45.4%;
+				top: 0%;
+				width: 39.5%;
+				height: 65.1%;
+				transform-origin: 70% 100%;
+			}
+
+			#zoe-label {
+				left: 0%;
+				top: 58.1%;
+				width: 47.9%;
+				height: 41%;
+			}
+
+			#user-leo {
+				z-index: 4;
+			}
+
+			#user-zoe {
+				z-index: 5;
+			}
+
+			.click-indicator {
+				position: absolute;
+				/* 3.2% × (624 / 758) = 2.64% (matched to highlight-assistants-en at its stage width) */
+				width: 2.64%;
+				aspect-ratio: 1 / 1;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 6;
+				transform-origin: 50% 50%;
+				border-radius: 50%;
+				background-color: #141414;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="animation">
+			<img id="stage-image" src="assets/stage-1.svg" alt="Animated image showcase" />
+			<img id="drop-in-image" class="overlay-image" src="assets/drop-in-stage-1.svg" alt="" aria-hidden="true" />
+
+			<div id="user-leo" class="user-actor" aria-hidden="true">
+				<img id="dragged-image" class="dragged-image" src="assets/dragged-1.svg" alt="" aria-hidden="true" />
+				<img id="leo-cursor" class="user-layer" src="assets/user-leo-cursor.svg" alt="" />
+				<img id="leo-label" class="user-layer" src="assets/user-leo-label.svg" alt="" />
+			</div>
+
+			<div id="user-zoe" class="user-actor" aria-hidden="true">
+				<img id="zoe-cursor" class="user-layer" src="assets/user-zoe-cursor.svg" alt="" />
+				<img id="zoe-label" class="user-layer" src="assets/user-zoe-label.svg" alt="" />
+			</div>
+
+			<div id="click-leo" class="click-indicator" aria-hidden="true"></div>
+			<div id="click-zoe" class="click-indicator" aria-hidden="true"></div>
+		</div>
+
+		<script>
+			const stageImage = document.getElementById("stage-image");
+			const dropInImage = document.getElementById("drop-in-image");
+			const draggedImage = document.getElementById("dragged-image");
+
+			const userLeo = document.getElementById("user-leo");
+			const userZoe = document.getElementById("user-zoe");
+			const leoCursor = document.getElementById("leo-cursor");
+			const zoeCursor = document.getElementById("zoe-cursor");
+
+			const clickLeo = document.getElementById("click-leo");
+			const clickZoe = document.getElementById("click-zoe");
+
+			const stageFadeInDuration = 0.7;
+			const stageFadeOutDuration = 0.7;
+			const repeatDelay = 1.8;
+
+			const times = {
+				stage1: 0.0,
+				leoIntro: 0.5,
+        stage2: 1.3,
+				leoFocus: 1.4,
+				leoClick: 1.8,
+        stage3: 1.85,
+        leoStay:  2.5,
+        leoDown: 3.25,
+				zoeIntro: 4.1,
+				zoeFocus: 5.1,
+				zoeClick: 5.5,
+        stage4: 5.55,
+        zoeStay: 6,
+        zoeOptions: 6.5,
+        zoeClickOptions: 7.0,
+        dropInStart: 7.5,
+				dropInSettled: 8.0,
+        zoeOptionsStay: 8.0,
+        zoeImage: 8.5,
+        zoeClickImage: 9.0,
+        stage5: 9.5,
+        zoeImageStay: 10.0,
+        zoeOut: 10.5,
+				usersExit: 14.0,
+				loopEnd: 16.0,
+			};
+
+			const stageSequence = [
+				{ at: times.stage1, src: "assets/stage-1.svg" },
+				{ at: times.stage2, src: "assets/stage-2.svg" },
+				{ at: times.stage3, src: "assets/stage-3.svg" },
+				{ at: times.stage4, src: "assets/stage-4.svg" },
+				{ at: times.stage5, src: "assets/stage-5.svg" },
+			];
+
+			const dropInFadeOutStart = times.stage5 - 0.3;
+			const dropInFadeOutDuration = 0.5;
+			const dropInKeyframes = [
+				{ at: times.dropInStart, autoAlpha: 0, scale: 1.18, ease: "none" },
+				{ at: times.dropInSettled, autoAlpha: 1, scale: 1, ease: "power2.out" },
+				{ at: dropInFadeOutStart, autoAlpha: 1, scale: 1, ease: "none" },
+				{ at: dropInFadeOutStart + dropInFadeOutDuration, autoAlpha: 0, scale: 1, ease: "power1.in" },
+			];
+
+			// ─── Actor keyframes ─────────────────────────────────────────────
+			// To add a new stop, insert an entry between any two existing ones.
+			const leoKeyframes = [
+				{ at: times.leoIntro, left: "80%",  top: "33%",  autoAlpha: 0,  ease: "none"        },
+				{ at: times.leoFocus, left: "37%",  top: "26%",  autoAlpha: 1,  ease: "power1.out" },
+        { at: times.leoStay,  left: "37%",  top: "26%",  autoAlpha: 1,  ease: "none" },
+        { at: times.leoDown,  left: "30%",  top: "40%",  autoAlpha: 0,  ease: "power1.in" },
+			];
+
+			const zoeKeyframes = [
+				{ at: times.zoeIntro,         left: "00%",  top: "75%", autoAlpha: 0,  ease: "none"        },
+				{ at: times.zoeFocus,         left: "35%",  top: "35%", autoAlpha: 1,  ease: "power1.out" },
+				{ at: times.zoeStay,          left: "35%",  top: "35%", autoAlpha: 1,  ease: "none"        },
+				{ at: times.zoeOptions,       left: "11%",  top: "28%", autoAlpha: 1,  ease: "power1.out" },
+				{ at: times.zoeOptionsStay,   left: "11%",  top: "28%", autoAlpha: 1,  ease: "none"        },
+				{ at: times.zoeImage,         left: "45%",  top: "60%", autoAlpha: 1,  ease: "power1.out" },
+				{ at: times.zoeImageStay,     left: "45%",  top: "60%", autoAlpha: 1,  ease: "none"        },
+				{ at: times.zoeOut,           left: "47%",  top: "65%", autoAlpha: 0,  ease: "power1.in"  },
+			];
+
+			const clickKeyframes = [
+				{ at: times.leoClick, userElement: userLeo, cursorElement: leoCursor, indicatorElement: clickLeo, anchorX: 0, anchorY: 0 },
+				{ at: times.zoeClick, userElement: userZoe, cursorElement: zoeCursor, indicatorElement: clickZoe, anchorX: 0.85, anchorY: 0 },
+				{ at: times.zoeClickOptions, userElement: userZoe, cursorElement: zoeCursor, indicatorElement: clickZoe, anchorX: 0.85, anchorY: 0 },
+				{ at: times.zoeClickImage, userElement: userZoe, cursorElement: zoeCursor, indicatorElement: clickZoe, anchorX: 0.85, anchorY: 0 },
+			];
+
+			const preloadAssets = [
+				"assets/stage-1.svg",
+				"assets/stage-2.svg",
+				"assets/stage-3.svg",
+				"assets/stage-4.svg",
+				"assets/stage-5.svg",
+				"assets/dragged-1.svg",
+				"assets/drop-in-stage-1.svg",
+				"assets/user-leo-cursor.svg",
+				"assets/user-leo-label.svg",
+				"assets/user-zoe-cursor.svg",
+				"assets/user-zoe-label.svg",
+			];
+
+			preloadAssets.forEach((src) => {
+				const preloadedImage = new Image();
+				preloadedImage.src = src;
+			});
+
+			function triggerUserClick(userElement, cursorElement, indicatorElement, anchorX, anchorY) {
+				const clickX = userElement.offsetLeft + userElement.offsetWidth * anchorX;
+				const clickY = userElement.offsetTop + userElement.offsetHeight * anchorY;
+
+				gsap.killTweensOf(cursorElement);
+				gsap.killTweensOf(indicatorElement);
+
+				gsap.fromTo(
+					cursorElement,
+					{ x: 0, y: 0, rotation: 0, scale: 1 },
+					{
+						duration: 0.1,
+						x: anchorX < 0.5 ? 2 : -2,
+						y: 2,
+						rotation: anchorX < 0.5 ? -3 : 3,
+						scale: 0.9,
+						yoyo: true,
+						repeat: 1,
+						ease: "power1.out",
+						onComplete: () => {
+							gsap.set(cursorElement, { x: 0, y: 0, rotation: 0, scale: 1 });
+						},
+					}
+				);
+
+				gsap.killTweensOf(indicatorElement);
+				gsap.set(indicatorElement, { left: clickX, top: clickY, scale: 0.4, autoAlpha: 1 });
+				gsap.to(indicatorElement, { duration: 0.35, scale: 1.4, autoAlpha: 0, ease: "power1.out" });
+			}
+
+			gsap.set(stageImage, { autoAlpha: 0 });
+			gsap.set(dropInImage, { autoAlpha: dropInKeyframes[0].autoAlpha, scale: dropInKeyframes[0].scale });
+			gsap.set(draggedImage, { autoAlpha: 0, scale: 1 });
+
+			gsap.set(userLeo, { autoAlpha: 0, left: leoKeyframes[0].left, top: leoKeyframes[0].top });
+			gsap.set(userZoe, { autoAlpha: 0, left: zoeKeyframes[0].left, top: zoeKeyframes[0].top });
+			gsap.set([leoCursor, zoeCursor], { rotation: 0, scale: 1, x: 0, y: 0 });
+			gsap.set([clickLeo, clickZoe], { autoAlpha: 0 });
+
+			const timeline = gsap.timeline({ repeat: -1, repeatDelay });
+
+			timeline.to(
+				stageImage,
+				{
+					duration: stageFadeInDuration,
+					autoAlpha: 1,
+					ease: "power1.out",
+				},
+				times.stage1
+			);
+
+			stageSequence.forEach(({ at, src }) => {
+				timeline.call(() => {
+					stageImage.src = src;
+				}, [], at);
+			});
+
+			for (let i = 1; i < dropInKeyframes.length; i++) {
+				const prev = dropInKeyframes[i - 1];
+				const { at, autoAlpha, scale, ease = "none" } = dropInKeyframes[i];
+				timeline.to(dropInImage, { duration: at - prev.at, autoAlpha, scale, ease }, prev.at);
+			}
+
+			timeline.to(
+				draggedImage,
+				{
+					duration: 0.45,
+					autoAlpha: 1,
+					ease: "power1.out",
+				},
+				times.leoIntro
+			);
+
+			for (let i = 1; i < leoKeyframes.length; i++) {
+				const prev = leoKeyframes[i - 1];
+				const { at, left, top, autoAlpha, ease = "none" } = leoKeyframes[i];
+				timeline.to(userLeo, { duration: at - prev.at, left, top, autoAlpha, ease }, prev.at);
+			}
+
+			timeline.set(draggedImage, { autoAlpha: 0 }, times.leoClick);
+
+			for (let i = 1; i < zoeKeyframes.length; i++) {
+				const prev = zoeKeyframes[i - 1];
+				const { at, left, top, autoAlpha, ease = "none" } = zoeKeyframes[i];
+				timeline.to(userZoe, { duration: at - prev.at, left, top, autoAlpha, ease }, prev.at);
+			}
+
+			clickKeyframes.forEach(({ at, userElement, cursorElement, indicatorElement, anchorX, anchorY }) => {
+				timeline.call(() => {
+					triggerUserClick(userElement, cursorElement, indicatorElement, anchorX, anchorY);
+				}, [], at);
+			});
+
+			timeline.to(
+				[userLeo, userZoe],
+				{
+					duration: 0.5,
+					autoAlpha: 0,
+					ease: "power1.in",
+				},
+				times.usersExit
+			);
+
+			const fadeOutAt = Math.max(times.loopEnd - stageFadeOutDuration, stageFadeInDuration);
+
+			timeline.to(
+				[stageImage, dropInImage, draggedImage],
+				{
+					duration: stageFadeOutDuration,
+					autoAlpha: 0,
+					ease: "power1.in",
+				},
+				fadeOutAt
+			);
+
+			timeline.call(() => {
+				gsap.set(stageImage, { autoAlpha: 0 });
+				gsap.set(dropInImage, { autoAlpha: dropInKeyframes[0].autoAlpha, scale: dropInKeyframes[0].scale });
+				gsap.set(draggedImage, { autoAlpha: 0, scale: 1 });
+				gsap.set(userLeo, { autoAlpha: 0, left: leoKeyframes[0].left, top: leoKeyframes[0].top });
+				gsap.set(userZoe, { autoAlpha: 0, left: zoeKeyframes[0].left, top: zoeKeyframes[0].top });
+				gsap.set([leoCursor, zoeCursor], { rotation: 0, scale: 1, x: 0, y: 0 });
+				gsap.set([clickLeo, clickZoe], { autoAlpha: 0 });
+			}, [], times.loopEnd);
+		</script>
+	</body>
+</html>

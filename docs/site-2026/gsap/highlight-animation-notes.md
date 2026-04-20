@@ -50,6 +50,7 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 ## Keyframe Strategy
 - Define keyframes as data objects, not hard-coded individual tweens.
 - Treat scene or stage changes as data as well when they happen on a schedule.
+- Apply the same rule to every animated layer, including overlays (for example drop-in layers), not only cursors or user actors.
 - Suggested fields:
   - `at`
   - `left`, `top` (or `x`, `y`)
@@ -57,6 +58,7 @@ Keep it generic enough for future variants that may differ in staging, timing, a
   - `rotation`
   - optional `ease`
 - Convert keyframes to tweens in a loop to keep maintenance simple.
+- If a layer is mostly static, keep a keyframe array anyway and read index `0` for initial/reset state so the project keeps one consistent mental model.
 - For non-positive gaps between keyframes, use immediate `timeline.call(...)`/`gsap.set(...)`.
 
 ## Sequence Model
@@ -64,6 +66,7 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 - A common setup is:
   - one `times` object with named absolute positions in the timeline
   - one `stageSequence` array for artwork swaps or scene states
+  - one `overlayKeyframes` array per overlay layer that animates (drop-in, emphasis cards, badges, etc.)
   - one `cursorKeyframes` array for cursor motion and visibility
   - one `eventTimes` array for click or emphasis moments
 - Compute absolute `at` values once and let the timeline consume those values.
@@ -92,6 +95,24 @@ Keep it generic enough for future variants that may differ in staging, timing, a
   - ripple/pulse indicator (expanding + fading)
 - Run both from one trigger function so timing always stays in sync.
 - Kill conflicting tweens before replaying interaction effects.
+
+**Standard indicator style (established in highlight-assistants-en):**
+- Shape: solid filled circle, `background-color: #141414`, `border-radius: 50%`
+- No border, no background-color variation per actor — one shared neutral dark style
+- Centering: use CSS `transform: translate(-50%, -50%)` so the indicator is always centered on the cursor tip without needing GSAP `xPercent/yPercent`
+- Tween: `gsap.set(el, { left, top, scale: 0.4, autoAlpha: 1 })` → `gsap.to(el, { duration: 0.35, scale: 1.4, autoAlpha: 0, ease: "power1.out" })`
+
+**Sizing:**
+- Base reference: `3.2%` of stage width at 624px (highlight-assistants-en)
+- Scale to other animations by: `3.2% × (referenceStageWidth / thisStageWidth)`
+- Example: for a 758px-wide stage: `3.2% × (624 / 758) = 2.64%`
+
+**Anchor calculation:**
+- `anchorX/anchorY` are fractions of the user wrapper's width/height, pointing to the cursor tip
+- Leo (tip top-left of wrapper): `anchorX: 0, anchorY: 0`
+- Zoe (tip top-right, cursor at `left: 45.4%`, `width: 39.5%`): `anchorX: 0.849, anchorY: 0`
+- General formula for right-side cursors: `anchorX = cursorLeft% + cursorWidth%` (as a fraction)
+- The bump direction is derived automatically: `anchorX < 0.5` → bump right + tilt CCW; otherwise bump left + tilt CW
 
 ## Asset and Loading Practices
 - Preload image assets used in timeline swaps.
@@ -218,3 +239,51 @@ When building animations that layer multiple overlays on top of a persistent sta
 - Example: `-1` shows first comment plain card, `-1a` shows the first line, `-1b` shows both lines.
 - Each layer fades in and scales at its own time, creating a text-appearing effect.
 - This approach is robust and asset-driven, avoiding dynamic text generation complexity.
+
+## Composite User Actor Pattern
+When an actor has a cursor that rotates or scales independently from its name label, split them into two child layers inside one wrapper div instead of combining them in a single SVG.
+
+**Structure:**
+```html
+<div id="user-leo" class="user-actor">
+  <img id="leo-cursor" class="user-layer" src="assets/user-leo-cursor.svg" />
+  <img id="leo-label"  class="user-layer" src="assets/user-leo-label.svg"  />
+</div>
+```
+- The wrapper (`user-actor`) is `position: absolute` with a `%`-based width and an explicit `aspect-ratio` matching the combined bounding box of both layers.
+- Both children are `position: absolute` inside the wrapper, sized and positioned with `%` values relative to the wrapper.
+- Move, fade, and position the wrapper via GSAP. Rotate/scale the cursor child independently. Never rotate the label child.
+
+**Transform origins:**
+- Set the cursor's `transform-origin` to the visual tip of the cursor (e.g. `30% 100%` for a left-leaning cursor, `70% 100%` for a right-leaning one).
+- The label child has no transform-origin concern — it is never transformed.
+
+**Click anchor:**
+- Pass `anchorX`/`anchorY` fractions relative to the wrapper into `triggerUserClick()`.
+- The click indicator position is computed at runtime from the wrapper's `offsetLeft/offsetTop/offsetWidth/offsetHeight` so it scales automatically with the iframe width.
+
+## Sizing Rule: Use the Displayed CSS Width as Percentage Base
+When calculating `%`-based widths for overlay elements, always use the **displayed CSS width** of the stage asset, not its internal viewBox or artwork coordinate space.
+
+- SVG files often have an internal coordinate system (e.g. 1290 px wide in the viewBox) that is larger than their rendered size (e.g. `width="758"`).
+- The iframe and all overlays scale with the CSS width (758 in this example), so that is the correct divisor.
+- Formula: `overlayWidth / stageDisplayedWidth` → e.g. `314 / 758 = 41.42%`
+- Double-check: open the SVG file and read its `width` attribute (not the viewBox dimensions).
+- If you use the viewBox size as the divisor, overlays will appear too small.
+
+## Drag Gesture Pattern
+To convey a user dragging an object across the canvas and dropping it:
+
+**Structure:**
+- Add an absolutely positioned `<img class="dragged-image">` layer for the item being dragged.
+- Give it the correct `aspect-ratio` matching the actual asset pixel dimensions (not `1/1`).
+- Size it with a `%` width calculated against the stage displayed width.
+
+**Choreography:**
+1. Fade the dragged image in at the same moment the actor appears (`leoIntro`).
+2. Move both the actor wrapper and the dragged image independently toward a shared "drop" destination over the same duration — they travel together visually but remain separate elements.
+3. On the click beat, instantly hide the dragged image with `timeline.set(draggedImage, { autoAlpha: 0 })`.
+4. Trigger the stage swap (src change) at the same beat so the new stage already shows the item in its "placed" state — this sells the drop illusion without needing a drop animation.
+
+**Reset:**
+- In the loop-end reset, restore the dragged image to its start position and `autoAlpha: 0` so it is ready for the next loop.
