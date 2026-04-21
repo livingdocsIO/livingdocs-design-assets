@@ -114,6 +114,21 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 - General formula for right-side cursors: `anchorX = cursorLeft% + cursorWidth%` (as a fraction)
 - The bump direction is derived automatically: `anchorX < 0.5` → bump right + tilt CCW; otherwise bump left + tilt CW
 
+**Rotation-safe click feedback (important):**
+- If cursor rotation is keyframed in the main timeline, do not kill or reset `rotation` inside click feedback helpers.
+- Prefer `gsap.killTweensOf(userElement, "x,y,scale")` instead of killing all props or including rotation.
+- Keep click micro-motion scoped to `x/y/scale` so timeline-driven `rotation` values continue uninterrupted.
+- If click feedback must touch rotation, capture the current rotation first and restore it explicitly after the tap tween.
+
+## Timing Offset Workflow
+When stakeholders ask for "the same animation, just 0.5s later" (or similar), apply a systematic offset rather than changing scattered tweens.
+
+- Keep one `times` object as the single source of truth.
+- Shift named markers in that object, not individual timeline tween start times.
+- If only post-intro beats should move, leave `stage1` fixed and offset all later markers.
+- Keep relative gaps between key moments unchanged unless intentionally retiming behavior.
+- After shifting times, verify `loopEnd` still leaves enough room for fade-out and reset.
+
 ## Asset and Loading Practices
 - Preload image assets used in timeline swaps.
 - Preload the cursor asset too if it is swapped or faded in after load.

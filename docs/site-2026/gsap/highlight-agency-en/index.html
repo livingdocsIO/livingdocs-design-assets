@@ -1,0 +1,245 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				background: transparent;
+			}
+
+			#animation {
+				position: relative;
+				width: 100%;
+			}
+
+			#stage-image,
+			#drop-in-image,
+			#user-3 {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+
+			#stage-image {
+				position: relative;
+				z-index: 1;
+			}
+
+			#drop-in-image {
+				position: absolute;
+				inset: 0;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 2;
+				transform-origin: 90.79% 67.11%;
+			}
+
+			#user-3 {
+				position: absolute;
+				/* 41 / 968 = 4.24% */
+				width: 4.24%;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 3;
+				/* Keep left/top anchored at the cursor tip (x=13, y=0 in user-3.svg) */
+				transform: translate(-31.7073%, 0%);
+				transform-origin: 31.7073% 0%;
+			}
+
+			.click-indicator {
+				position: absolute;
+				/* 2.64% used across highlight animations for consistent pulse size */
+				width: 2.64%;
+				aspect-ratio: 1 / 1;
+				opacity: 0;
+				pointer-events: none;
+				z-index: 4;
+				transform-origin: 50% 50%;
+				border-radius: 50%;
+				background-color: #141414;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="animation">
+			<img id="stage-image" src="assets/stage-1.svg" alt="Animated agency dashboard preview" />
+			<img id="drop-in-image" src="assets/drop-in-stage-1.svg" alt="" aria-hidden="true" />
+			<img id="user-3" src="assets/user-3.svg" alt="" aria-hidden="true" />
+			<div id="click-indicator" class="click-indicator" aria-hidden="true"></div>
+		</div>
+
+		<script>
+			const stageImage = document.getElementById("stage-image");
+			const dropInImage = document.getElementById("drop-in-image");
+			const user3 = document.getElementById("user-3");
+			const clickIndicator = document.getElementById("click-indicator");
+
+			const stageFadeInDuration = 0.45;
+			const stageFadeOutDuration = 0.45;
+			const repeatDelay = 1.8;
+
+			const times = {
+				stage1: 0.0,
+				userIntro: 0.9,
+				stage2: 1.1,
+        userThink: 2.25,
+        plusHover: 3.0,
+				plusClick: 3.25,
+				stage3: 3.35,
+        plusStay: 4.0,
+				linkMove: 4.6,
+				linkClick: 4.7,
+				userExit: 5.05,
+				dropInStart: 5.6,
+				dropInSettled: 6.5,
+				dropInHold: 9.0,
+				loopEnd: 9.0,
+			};
+
+			const stageSequence = [
+				{ at: times.stage1, src: "assets/stage-1.svg" },
+				{ at: times.stage2, src: "assets/stage-2.svg" },
+				{ at: times.stage3, src: "assets/stage-3.svg" },
+			];
+
+			const userKeyframes = [
+				{ at: times.userIntro, left: "80%", top: "85%", rotation: 0, autoAlpha: 0, ease: "none" },
+				{ at: times.userThink, left: "73.5%", top: "66.0%", rotation: 0, autoAlpha: 1, ease: "power2.out" },
+				{ at: times.plusHover, left: "64.0%", top: "66.0%", rotation: -30, autoAlpha: 1, ease: "power1.inOut" },
+        { at: times.plusStay, left: "64.0%", top: "66.0%", rotation: -30, autoAlpha: 1, ease: "none" },
+				{ at: times.linkMove, left: "96.0%", top: "66.0%", rotation: 50, autoAlpha: 1, ease: "power2.out" },
+				{ at: times.userExit, left: "96.0%", top: "66.2%", rotation: 50, autoAlpha: 0, ease: "power1.in" },
+			];
+
+			const clickKeyframes = [
+				{ at: times.plusClick, x: 626, y: 248 },
+				{ at: times.linkClick, x: 949, y: 248 },
+			];
+
+			const dropInKeyframes = [
+				{ at: times.dropInStart, autoAlpha: 0, scale: 2, ease: "none" },
+				{ at: times.dropInSettled, autoAlpha: 1, scale: 1, ease: "power2.out" },
+				{ at: times.dropInHold, autoAlpha: 1, scale: 1, ease: "none" },
+			];
+
+			[
+				"assets/stage-1.svg",
+				"assets/stage-2.svg",
+				"assets/stage-3.svg",
+				"assets/drop-in-stage-1.svg",
+				"assets/user-3.svg",
+			].forEach((src) => {
+				const preloadedImage = new Image();
+				preloadedImage.src = src;
+			});
+
+			function triggerUserClick(clickX, clickY) {
+				// Keep rotation in the main timeline so keyframed angles are never interrupted.
+				gsap.killTweensOf(user3, "x,y,scale");
+				gsap.killTweensOf(clickIndicator);
+
+				gsap.fromTo(
+					user3,
+					{ x: 0, y: 0, scale: 1 },
+					{
+						duration: 0.1,
+						x: -2,
+						y: 2,
+						scale: 0.92,
+						yoyo: true,
+						repeat: 1,
+						ease: "power1.out",
+						onComplete: () => {
+							gsap.set(user3, { x: 0, y: 0, scale: 1 });
+						},
+					}
+				);
+
+				const clickLeftPercent = (clickX / 968) * 100;
+				const clickTopPercent = (clickY / 376) * 100;
+
+				gsap.set(clickIndicator, { left: `${clickLeftPercent}%`, top: `${clickTopPercent}%`, scale: 0.4, autoAlpha: 1 });
+				gsap.to(clickIndicator, { duration: 0.35, scale: 1.4, autoAlpha: 0, ease: "power1.out" });
+			}
+
+			gsap.set(stageImage, { autoAlpha: 0 });
+			gsap.set(dropInImage, { autoAlpha: dropInKeyframes[0].autoAlpha, scale: dropInKeyframes[0].scale });
+			gsap.set(user3, {
+				autoAlpha: 0,
+				left: userKeyframes[0].left,
+				top: userKeyframes[0].top,
+				x: 0,
+				y: 0,
+				rotation: userKeyframes[0].rotation ?? 0,
+				scale: 1,
+			});
+			gsap.set(clickIndicator, { autoAlpha: 0 });
+
+			const timeline = gsap.timeline({ repeat: -1, repeatDelay });
+
+			timeline.to(
+				stageImage,
+				{
+					duration: stageFadeInDuration,
+					autoAlpha: 1,
+					ease: "power1.out",
+				},
+				times.stage1
+			);
+
+			stageSequence.forEach(({ at, src }) => {
+				timeline.call(() => {
+					stageImage.src = src;
+				}, [], at);
+			});
+
+			for (let i = 1; i < userKeyframes.length; i++) {
+				const prev = userKeyframes[i - 1];
+				const { at, left, top, rotation = prev.rotation ?? 0, autoAlpha, ease = "none" } = userKeyframes[i];
+				timeline.to(user3, { duration: at - prev.at, left, top, rotation, autoAlpha, ease }, prev.at);
+			}
+
+			for (let i = 1; i < dropInKeyframes.length; i++) {
+				const prev = dropInKeyframes[i - 1];
+				const { at, autoAlpha, scale, ease = "none" } = dropInKeyframes[i];
+				timeline.to(dropInImage, { duration: at - prev.at, autoAlpha, scale, ease }, prev.at);
+			}
+
+			clickKeyframes.forEach(({ at, x, y }) => {
+				timeline.call(() => {
+					triggerUserClick(x, y);
+				}, [], at);
+			});
+
+			const fadeOutAt = Math.max(times.loopEnd - stageFadeOutDuration, stageFadeInDuration);
+
+			timeline.to(
+				[stageImage, dropInImage, user3, clickIndicator],
+				{
+					duration: stageFadeOutDuration,
+					autoAlpha: 0,
+					ease: "power1.in",
+				},
+				fadeOutAt
+			);
+
+			timeline.call(() => {
+				gsap.set(stageImage, { autoAlpha: 0 });
+				gsap.set(dropInImage, { autoAlpha: dropInKeyframes[0].autoAlpha, scale: dropInKeyframes[0].scale });
+				gsap.set(user3, {
+					autoAlpha: 0,
+					left: userKeyframes[0].left,
+					top: userKeyframes[0].top,
+					x: 0,
+					y: 0,
+					rotation: userKeyframes[0].rotation ?? 0,
+					scale: 1,
+				});
+				gsap.set(clickIndicator, { autoAlpha: 0 });
+			}, [], times.loopEnd);
+		</script>
+	</body>
+</html>
