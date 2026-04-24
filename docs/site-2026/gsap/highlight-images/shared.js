@@ -4,6 +4,8 @@
 
 			const userLeo = document.getElementById("user-leo");
 			const userZoe = document.getElementById("user-zoe");
+			const leoPointer = document.getElementById("leo-pointer");
+			const zoePointer = document.getElementById("zoe-pointer");
 			const leoCursor = document.getElementById("leo-cursor");
 			const zoeCursor = document.getElementById("zoe-cursor");
 
@@ -13,34 +15,39 @@
 			const stageFadeInDuration = 0.7;
 			const stageFadeOutDuration = 0.7;
 			const repeatDelay = 1.8;
+			const startDelay = 0.5;
 
-			const times = {
+			const baseTimes = {
 				stage1: 0.0,
 				leoIntro: 0.5,
-        stage2: 1.3,
+				stage2: 1.3,
 				leoFocus: 1.4,
 				leoClick: 1.8,
-        stage3: 1.85,
-        leoStay:  2.5,
-        leoDown: 3.25,
+				stage3: 1.85,
+				leoStay: 2.5,
+				leoDown: 3.25,
 				zoeIntro: 4.1,
 				zoeFocus: 5.1,
 				zoeClick: 5.5,
-        stage4: 5.55,
-        zoeStay: 6,
-        zoeOptions: 6.5,
-        zoeClickOptions: 7.0,
-        dropInStart: 7.5,
+				stage4: 5.55,
+				zoeStay: 6,
+				zoeOptions: 6.5,
+				zoeClickOptions: 7.0,
+				dropInStart: 7.5,
 				dropInSettled: 8.0,
-        zoeOptionsStay: 8.0,
-        zoeImage: 8.5,
-        zoeClickImage: 9.0,
-        stage5: 9.5,
-        zoeImageStay: 10.0,
-        zoeOut: 10.5,
+				zoeOptionsStay: 8.0,
+				zoeImage: 8.5,
+				zoeClickImage: 9.0,
+				stage5: 9.5,
+				zoeImageStay: 10.0,
+				zoeOut: 10.5,
 				usersExit: 14.0,
 				loopEnd: 16.0,
 			};
+
+			const times = Object.fromEntries(
+				Object.entries(baseTimes).map(([name, value]) => [name, value + startDelay])
+			);
 
 			const stageSequence = [
 				{ at: times.stage1, src: "assets/stage-1.svg" },
@@ -74,16 +81,34 @@
 				{ at: times.zoeStay,          left: "35%",  top: "38%", autoAlpha: 1,  ease: "none"        },
 				{ at: times.zoeOptions,       left: "11%",  top: "31%", autoAlpha: 1,  ease: "power1.out" },
 				{ at: times.zoeOptionsStay,   left: "11%",  top: "31%", autoAlpha: 1,  ease: "none"        },
-				{ at: times.zoeImage,         left: "45%",  top: "63%", autoAlpha: 1,  ease: "power1.out" },
-				{ at: times.zoeImageStay,     left: "45%",  top: "63%", autoAlpha: 1,  ease: "none"        },
+				{ at: times.zoeImage,         left: "43%",  top: "63%", autoAlpha: 1,  ease: "power1.out" },
+				{ at: times.zoeImageStay,     left: "43%",  top: "63%", autoAlpha: 1,  ease: "none"        },
 				{ at: times.zoeOut,           left: "47%",  top: "68%", autoAlpha: 0,  ease: "power1.in"  },
 			];
 
+			const leoCursorKeyframes = [
+				{ at: times.leoIntro, rotation: -20, ease: "none" },
+				{ at: times.leoFocus, rotation: -8, ease: "power1.out" },
+				{ at: times.leoStay, rotation: -8, ease: "none" },
+				{ at: times.leoDown, rotation: 12, ease: "power1.in" },
+			];
+
+			const zoeCursorKeyframes = [
+				{ at: times.zoeIntro, rotation: 24, ease: "none" },
+				{ at: times.zoeFocus, rotation: 6, ease: "power1.out" },
+				{ at: times.zoeStay, rotation: 6, ease: "none" },
+				{ at: times.zoeOptions, rotation: -12, ease: "power1.out" },
+				{ at: times.zoeOptionsStay, rotation: -12, ease: "none" },
+				{ at: times.zoeImage, rotation: 18, ease: "power1.out" },
+				{ at: times.zoeImageStay, rotation: 18, ease: "none" },
+				{ at: times.zoeOut, rotation: 26, ease: "power1.in" },
+			];
+
 			const clickKeyframes = [
-				{ at: times.leoClick, userElement: userLeo, cursorElement: leoCursor, indicatorElement: clickLeo, anchorX: 0, anchorY: 0 },
-				{ at: times.zoeClick, userElement: userZoe, cursorElement: zoeCursor, indicatorElement: clickZoe, anchorX: 0.85, anchorY: 0 },
-				{ at: times.zoeClickOptions, userElement: userZoe, cursorElement: zoeCursor, indicatorElement: clickZoe, anchorX: 0.85, anchorY: 0 },
-				{ at: times.zoeClickImage, userElement: userZoe, cursorElement: zoeCursor, indicatorElement: clickZoe, anchorX: 0.85, anchorY: 0 },
+				{ at: times.leoClick, pointerElement: leoPointer, indicatorElement: clickLeo, bumpX: 2 },
+				{ at: times.zoeClick, pointerElement: zoePointer, indicatorElement: clickZoe, bumpX: -2 },
+				{ at: times.zoeClickOptions, pointerElement: zoePointer, indicatorElement: clickZoe, bumpX: -2 },
+				{ at: times.zoeClickImage, pointerElement: zoePointer, indicatorElement: clickZoe, bumpX: -2 },
 			];
 
 			const preloadAssets = [
@@ -105,33 +130,29 @@
 				preloadedImage.src = src;
 			});
 
-			function triggerUserClick(userElement, cursorElement, indicatorElement, anchorX, anchorY) {
-				const clickX = userElement.offsetLeft + userElement.offsetWidth * anchorX;
-				const clickY = userElement.offsetTop + userElement.offsetHeight * anchorY;
-
-				gsap.killTweensOf(cursorElement);
+			function triggerUserClick(pointerElement, indicatorElement, bumpX) {
+				gsap.killTweensOf(pointerElement, "x,y,scale");
 				gsap.killTweensOf(indicatorElement);
 
 				gsap.fromTo(
-					cursorElement,
-					{ x: 0, y: 0, rotation: 0, scale: 1 },
+					pointerElement,
+					{ x: 0, y: 0, scale: 1 },
 					{
 						duration: 0.1,
-						x: anchorX < 0.5 ? 2 : -2,
+						x: bumpX,
 						y: 2,
-						rotation: anchorX < 0.5 ? -3 : 3,
 						scale: 0.9,
 						yoyo: true,
 						repeat: 1,
 						ease: "power1.out",
 						onComplete: () => {
-							gsap.set(cursorElement, { x: 0, y: 0, rotation: 0, scale: 1 });
+							gsap.set(pointerElement, { x: 0, y: 0, scale: 1 });
 						},
 					}
 				);
 
 				gsap.killTweensOf(indicatorElement);
-				gsap.set(indicatorElement, { left: clickX, top: clickY, scale: 0.4, autoAlpha: 1 });
+				gsap.set(indicatorElement, { scale: 0.4, autoAlpha: 1 });
 				gsap.to(indicatorElement, { duration: 0.35, scale: 1.4, autoAlpha: 0, ease: "power1.out" });
 			}
 
@@ -141,6 +162,8 @@
 
 			gsap.set(userLeo, { autoAlpha: 0, left: leoKeyframes[0].left, top: leoKeyframes[0].top });
 			gsap.set(userZoe, { autoAlpha: 0, left: zoeKeyframes[0].left, top: zoeKeyframes[0].top });
+			gsap.set(leoPointer, { rotation: leoCursorKeyframes[0].rotation, scale: 1, x: 0, y: 0 });
+			gsap.set(zoePointer, { rotation: zoeCursorKeyframes[0].rotation, scale: 1, x: 0, y: 0 });
 			gsap.set([leoCursor, zoeCursor], { rotation: 0, scale: 1, x: 0, y: 0 });
 			gsap.set([clickLeo, clickZoe], { autoAlpha: 0 });
 
@@ -192,9 +215,21 @@
 				timeline.to(userZoe, { duration: at - prev.at, left, top, autoAlpha, ease }, prev.at);
 			}
 
-			clickKeyframes.forEach(({ at, userElement, cursorElement, indicatorElement, anchorX, anchorY }) => {
+			for (let i = 1; i < leoCursorKeyframes.length; i++) {
+				const prev = leoCursorKeyframes[i - 1];
+				const { at, rotation, ease = "none" } = leoCursorKeyframes[i];
+				timeline.to(leoPointer, { duration: at - prev.at, rotation, ease }, prev.at);
+			}
+
+			for (let i = 1; i < zoeCursorKeyframes.length; i++) {
+				const prev = zoeCursorKeyframes[i - 1];
+				const { at, rotation, ease = "none" } = zoeCursorKeyframes[i];
+				timeline.to(zoePointer, { duration: at - prev.at, rotation, ease }, prev.at);
+			}
+
+			clickKeyframes.forEach(({ at, pointerElement, indicatorElement, bumpX }) => {
 				timeline.call(() => {
-					triggerUserClick(userElement, cursorElement, indicatorElement, anchorX, anchorY);
+					triggerUserClick(pointerElement, indicatorElement, bumpX);
 				}, [], at);
 			});
 
@@ -226,6 +261,8 @@
 				gsap.set(draggedImage, { autoAlpha: 0, scale: 1 });
 				gsap.set(userLeo, { autoAlpha: 0, left: leoKeyframes[0].left, top: leoKeyframes[0].top });
 				gsap.set(userZoe, { autoAlpha: 0, left: zoeKeyframes[0].left, top: zoeKeyframes[0].top });
-				gsap.set([leoCursor, zoeCursor], { rotation: 0, scale: 1, x: 0, y: 0 });
+					gsap.set(leoPointer, { rotation: leoCursorKeyframes[0].rotation, scale: 1, x: 0, y: 0 });
+					gsap.set(zoePointer, { rotation: zoeCursorKeyframes[0].rotation, scale: 1, x: 0, y: 0 });
+					gsap.set([leoCursor, zoeCursor], { rotation: 0, scale: 1, x: 0, y: 0 });
 				gsap.set([clickLeo, clickZoe], { autoAlpha: 0 });
 			}, [], times.loopEnd);

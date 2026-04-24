@@ -65,7 +65,20 @@
 				z-index: 1;
 			}
 
-			#leo-cursor {
+			.pointer-wrap {
+				position: absolute;
+				z-index: 1;
+			}
+
+			.cursor-image {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+			}
+
+			#leo-pointer {
 				left: 0%;
 				top: 0%;
 				width: 39.5%;
@@ -80,7 +93,7 @@
 				height: 41%;
 			}
 
-			#zoe-cursor {
+			#zoe-pointer {
 				left: 45.4%;
 				top: 0%;
 				width: 39.5%;
@@ -105,16 +118,26 @@
 
 			.click-indicator {
 				position: absolute;
-				/* 3.2% × (624 / 758) = 2.64% (matched to highlight-assistants-en at its stage width) */
-				width: 2.64%;
+				/* 2.64% of stage width -> 42.57% of pointer width (pointer is 6.2015% of stage) */
+				width: 42.57%;
 				aspect-ratio: 1 / 1;
 				opacity: 0;
 				pointer-events: none;
-				z-index: 6;
+				z-index: 1;
 				transform-origin: 50% 50%;
 				border-radius: 50%;
 				background-color: #141414;
 				transform: translate(-50%, -50%);
+			}
+
+			#click-leo {
+				left: 0%;
+				top: 0%;
+			}
+
+			#click-zoe {
+				left: 100%;
+				top: 0%;
 			}
 		</style>
 	</head>
@@ -125,17 +148,20 @@
 
 			<div id="user-leo" class="user-actor" aria-hidden="true">
 				<img id="dragged-image" class="dragged-image" src="assets/dragged-1.svg" alt="" aria-hidden="true" />
-				<img id="leo-cursor" class="user-layer" src="../assets/shared/user-leo-cursor.svg" alt="" />
+				<div id="leo-pointer" class="pointer-wrap">
+					<img id="leo-cursor" class="cursor-image" src="../assets/shared/user-leo-cursor.svg" alt="" />
+					<div id="click-leo" class="click-indicator" aria-hidden="true"></div>
+				</div>
 				<img id="leo-label" class="user-layer" src="../assets/shared/user-leo-label.svg" alt="" />
 			</div>
 
 			<div id="user-zoe" class="user-actor" aria-hidden="true">
-				<img id="zoe-cursor" class="user-layer" src="../assets/shared/user-zoe-cursor.svg" alt="" />
+				<div id="zoe-pointer" class="pointer-wrap">
+					<img id="zoe-cursor" class="cursor-image" src="../assets/shared/user-zoe-cursor.svg" alt="" />
+					<div id="click-zoe" class="click-indicator" aria-hidden="true"></div>
+				</div>
 				<img id="zoe-label" class="user-layer" src="../assets/shared/user-zoe-label.svg" alt="" />
 			</div>
-
-			<div id="click-leo" class="click-indicator" aria-hidden="true"></div>
-			<div id="click-zoe" class="click-indicator" aria-hidden="true"></div>
 		</div>
 
     <script src="../highlight-images/shared.js"></script>
