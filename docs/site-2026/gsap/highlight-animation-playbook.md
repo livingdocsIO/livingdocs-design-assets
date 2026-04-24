@@ -137,6 +137,25 @@ When stakeholders ask for "the same animation, just 0.5s later" (or similar), ap
 - Keep file naming predictable for sequenced frames.
 - Avoid runtime stalls by preparing all visual states before first visible frame.
 
+### Bitmap Optimization Workflow (SVG + Raster)
+- When SVGs contain embedded bitmap payloads (for example `data:image/...` or nested `<image href=...>`), externalize those bitmaps into separate files when possible.
+- Figma exports often include alpha channels by default, even when transparency is not visually needed.
+- Treat alpha as ambiguous by default: if alpha is detected, ask for confirmation before flattening/removing alpha or converting to JPG.
+- If no transparency is required, prefer JPG for photo-like bitmap content to reduce payload.
+- Keep PNG only when true transparency is required.
+
+### Local Preview Requirement
+- Do not rely on `file://` URLs for final verification when SVGs reference external bitmap files.
+- Browsers can block or inconsistently load nested local-file image references in that mode.
+- Validate with a local HTTP server instead, for example:
+
+```bash
+cd /path/to/repo
+python3 -m http.server 8000
+```
+
+- Then open the animation via `http://localhost:8000/...`.
+
 ## Accessibility and Semantics
 - Keep meaningful stage imagery accessible with an appropriate `alt` when needed.
 - Mark decorative animation layers such as cursor and click effects as hidden from assistive technology.
@@ -340,3 +359,26 @@ To convey a user dragging an object across the canvas and dropping it:
 
 **Reset:**
 - In the loop-end reset, restore the dragged image to its start position and `autoAlpha: 0` so it is ready for the next loop.
+
+## Pre-Commit Optimization Checklist
+Use this checklist before committing animation asset updates:
+
+1. **Scan SVGs for raster payloads**
+- Check for `data:image/...` and nested `<image href=...>` references.
+- Externalize embedded bitmap data where practical.
+
+2. **Validate alpha-channel intent**
+- If alpha is present, treat it as ambiguous (especially from Figma exports).
+- Confirm whether transparency is truly required before flattening or switching formats.
+
+3. **Pick raster format intentionally**
+- Keep PNG when true transparency is needed.
+- Prefer JPG for non-transparent, photo-like bitmap content.
+
+4. **Rewrite and verify references**
+- Update all related references after file-format changes (`.png` -> `.jpg`, etc.).
+- Confirm there are no stale references in SVG/HTML/JS/CSS.
+
+5. **Measure and preview correctly**
+- Capture before/after file-size totals (overall and per animation family when useful).
+- Validate visuals through a local HTTP server (`http://localhost:...`), not `file://`.
