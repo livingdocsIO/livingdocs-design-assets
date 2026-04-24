@@ -1,0 +1,170 @@
+      const animation = document.getElementById("animation");
+      const stageImage = document.getElementById("stage-image");
+      const cursorImage = document.getElementById("cursor-image");
+      const cursorClick = document.getElementById("cursor-click");
+      const cursorSource = "../assets/shared/user-1.svg";
+      const stageFadeInDuration = 0.4;
+      const stageFadeOutDuration = 0.4;
+      const times = {
+        stage1: 0.0,
+        cursorIntro: 0.5,
+        stage2: 1.0,
+        cursorFocus1: 1.25,
+        click1: 1.875,
+        stage3: 2.25,
+        stage4: 2.25,
+        cursorHold1: 3.75,
+        stage5: 4.25,
+        cursorFocus2: 4.5,
+        click2: 4.625,
+        cursorHold2: 5.0,
+        stage6: 5.25,
+        stage7: 5.25,
+        cursorExit: 5.5,
+        loopEnd: 6.75,
+      };
+      const stageSequence = [
+        { at: times.stage1, src: "assets/stage-1.svg" },
+        { at: times.stage2, src: "assets/stage-2.svg" },
+        { at: times.stage3, src: "assets/stage-3.svg" },
+        { at: times.stage4, src: "assets/stage-4.svg" },
+        { at: times.stage5, src: "assets/stage-5.svg" },
+        { at: times.stage6, src: "assets/stage-6.svg" },
+        { at: times.stage7, src: "assets/stage-7.svg" },
+      ];
+      const cursorKeyframes = [
+        { at: times.cursorIntro, left: "28%", top: "16%", autoAlpha: 0, rotation:   30 },
+        { at: times.cursorFocus1, left: "40%", top: "36%", autoAlpha: 1, rotation:   0, ease: "power1.out" },
+        { at: times.cursorHold1, left: "40%", top: "36%", autoAlpha: 1, rotation:   0 },
+        { at: times.cursorFocus2, left: "70%", top: "74%", autoAlpha: 1, rotation:  -30, ease: "power1.out" },
+        { at: times.cursorHold2, left: "70%", top: "74%", autoAlpha: 1, rotation:  -30 },
+        { at: times.cursorExit, left: "70%", top: "76%", autoAlpha: 0, rotation:  -30, ease: "power1.out" },
+      ];
+      const cursorClickTimes = [times.click1, times.click2];
+      const loopDuration = times.loopEnd;
+
+      stageSequence.forEach(({ src }) => {
+        const preloadedImage = new Image();
+        preloadedImage.src = src;
+      });
+
+      const preloadedCursor = new Image();
+      preloadedCursor.src = cursorSource;
+
+      gsap.set(stageImage, { autoAlpha: 0 });
+
+      function applyCursorState(frame) {
+        gsap.set(cursorImage, {
+          left: frame.left,
+          top: frame.top,
+          autoAlpha: frame.autoAlpha,
+          rotation: frame.rotation ?? 0,
+        });
+      }
+
+      function triggerCursorClick() {
+        const left = cursorImage.offsetLeft + cursorImage.offsetWidth;
+        const top = cursorImage.offsetTop;
+
+        gsap.killTweensOf(cursorImage, "x,y,scale");
+        gsap.fromTo(
+          cursorImage,
+          {
+            x: 0,
+            y: 0,
+            scale: 1,
+          },
+          {
+            duration: 0.09,
+            x: -2,
+            y: 2,
+            scale: 0.8,
+            ease: "power2.out",
+            repeat: 1,
+            yoyo: true,
+            clearProps: "x,y",
+          }
+        );
+
+        gsap.killTweensOf(cursorClick);
+        gsap.set(cursorClick, {
+          left,
+          top,
+          scale: 0.4,
+          autoAlpha: 2,
+        });
+        gsap.to(cursorClick, {
+          duration: 0.35,
+          scale: 1.4,
+          autoAlpha: 0,
+          ease: "power1.out",
+        });
+      }
+
+      const timeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+
+      stageSequence.forEach(({ at, src }) => {
+        timeline.call(() => {
+          stageImage.src = src;
+        }, [], at);
+      });
+
+      timeline.to(
+        stageImage,
+        {
+          duration: stageFadeInDuration,
+          autoAlpha: 1,
+          ease: "power1.out",
+        },
+        0
+      );
+
+      timeline.to(
+        stageImage,
+        {
+          duration: stageFadeOutDuration,
+          autoAlpha: 0,
+          ease: "power1.in",
+        },
+        Math.max(times.loopEnd - stageFadeOutDuration, stageFadeInDuration)
+      );
+
+      applyCursorState(cursorKeyframes[0]);
+
+      cursorKeyframes.slice(1).forEach((frame, index) => {
+        const previousFrame = cursorKeyframes[index];
+        const duration = frame.at - previousFrame.at;
+
+        if (duration <= 0) {
+          timeline.call(() => {
+            applyCursorState(frame);
+          }, [], frame.at);
+          return;
+        }
+
+        timeline.to(
+          cursorImage,
+          {
+            duration,
+            left: frame.left,
+            top: frame.top,
+            autoAlpha: frame.autoAlpha,
+            rotation: frame.rotation ?? 0,
+            ease: frame.ease || "none",
+          },
+          previousFrame.at
+        );
+      });
+
+      cursorClickTimes.forEach((at) => {
+        timeline.call(() => {
+          triggerCursorClick();
+        }, [], at);
+      });
+
+      timeline.call(() => {
+        stageImage.src = stageSequence[0].src;
+        gsap.set(stageImage, { autoAlpha: 0 });
+        applyCursorState(cursorKeyframes[0]);
+        gsap.set(cursorClick, { autoAlpha: 0, scale: 0.4 });
+      }, [], times.loopEnd);

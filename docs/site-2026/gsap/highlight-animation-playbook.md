@@ -28,6 +28,8 @@ Keep it generic enough for future variants that may differ in staging, timing, a
 - One helper for applying immediate state (`gsap.set`).
 - One helper for event-style feedback (for example click ripple/bump).
 - One timeline assembly section where all `.to(...)` and `.call(...)` are registered.
+- One shared script per animation (for example `highlight-assistants/shared.js`) loaded by both locale pages.
+- Thin locale entry pages (`highlight-*-en/index.html`, `highlight-*-de/index.html`) that mostly define structure and script includes.
 
 ## Layout Rules
 - Use a single relative-positioned root container with width set to `100%`.
@@ -178,9 +180,45 @@ When stakeholders ask for "the same animation, just 0.5s later" (or similar), ap
 - Name files and folders clearly by locale, for example `-en`, `-de`, while keeping the structure parallel between variants.
 - If a locale version needs timing or layout adjustments, document only the delta in a small per-project note.
 
+### Locale Folder Strategy (Current Setup)
+- Keep one folder per locale per animation, for example `highlight-agency-en` and `highlight-agency-de`.
+- Keep language-specific files inside each animation-local `assets/` directory.
+- Keep reusable neutral files in `docs/site-2026/gsap/assets/shared/` (for example cursors and neutral user elements).
+- Include `../asset-resolver.js` from each animation `index.html` so shared fallback logic is available.
+- Keep animation logic in one shared file per animation, for example `docs/site-2026/gsap/highlight-assistants/shared.js`, then include it from both locale `index.html` files.
+
+### Current Shared-Script Layout
+- Per-animation shared logic lives in:
+  - `docs/site-2026/gsap/highlight-agency/shared.js`
+  - `docs/site-2026/gsap/highlight-assistants/shared.js`
+  - `docs/site-2026/gsap/highlight-collaboration/shared.js`
+  - `docs/site-2026/gsap/highlight-images/shared.js`
+  - `docs/site-2026/gsap/highlight-media-center/shared.js`
+  - `docs/site-2026/gsap/highlight-page-management/shared.js`
+- Locale pages should avoid large inline timeline blocks.
+- Update animation behavior in the shared script first; only add locale-specific timing/position deltas when strictly required.
+
+### Update Workflow (No-Drift Rule)
+- For behavior/timing fixes: edit only the relevant `highlight-<name>/shared.js` file.
+- For language-specific visual content: update only `highlight-<name>-de/assets/` or `highlight-<name>-en/assets/`.
+- For neutral actors/cursors/labels: store once in `docs/site-2026/gsap/assets/shared/`.
+- Keep `index.html` changes minimal and structural (script includes, mount node, locale bootstrap).
+
+### Asset Resolution Priority
+- Resolve assets in this order:
+  1. local animation assets (`./assets/<file>`)
+  2. shared neutral assets (`../assets/shared/<file>`)
+- This allows locale-specific overrides without duplicating neutral assets in every locale folder.
+
+### Practical Import Flow for New Locale Assets
+- Create locale-specific exports into the matching `highlight-*-de/assets/` folder.
+- Move truly neutral files to `docs/site-2026/gsap/assets/shared/` only when they are stable and reused by multiple animations.
+- Keep filenames stable between locales so no timeline code changes are needed.
+- If German text length shifts geometry, tune only the keyframe delta values for that locale.
+
 ## Maintenance Note
 - This document should remain the baseline reference for future GSAP iframe animations in this repository.
-- For now, keep each animation self-contained and observe patterns before extracting shared helpers or shared assets.
+- Keep one canonical animation timeline per animation in its shared script and reuse it across locales.
 - Revisit shared functions and reusable asset conventions only after the animation pool is large enough to show stable repetition.
 - Useful improvements are welcome, but ask for confirmation before making discretionary changes that go beyond the immediate project need.
 
@@ -261,8 +299,8 @@ When an actor has a cursor that rotates or scales independently from its name la
 **Structure:**
 ```html
 <div id="user-leo" class="user-actor">
-  <img id="leo-cursor" class="user-layer" src="assets/user-leo-cursor.svg" />
-  <img id="leo-label"  class="user-layer" src="assets/user-leo-label.svg"  />
+  <img id="leo-cursor" class="user-layer" src="../assets/shared/user-leo-cursor.svg" />
+  <img id="leo-label"  class="user-layer" src="../assets/shared/user-leo-label.svg"  />
 </div>
 ```
 - The wrapper (`user-actor`) is `position: absolute` with a `%`-based width and an explicit `aspect-ratio` matching the combined bounding box of both layers.
