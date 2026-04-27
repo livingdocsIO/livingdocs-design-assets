@@ -23,7 +23,7 @@
 				stage2: 1.3,
 				leoFocus: 1.4,
 				leoClick: 1.8,
-				stage3: 1.85,
+				stage3: 1.8,
 				leoStay: 2.5,
 				leoDown: 3.25,
 				zoeIntro: 4.1,
@@ -79,8 +79,8 @@
 				{ at: times.zoeIntro,         left: "00%",  top: "78%", autoAlpha: 0,  ease: "none"        },
 				{ at: times.zoeFocus,         left: "35%",  top: "38%", autoAlpha: 1,  ease: "power1.out" },
 				{ at: times.zoeStay,          left: "35%",  top: "38%", autoAlpha: 1,  ease: "none"        },
-				{ at: times.zoeOptions,       left: "11%",  top: "31%", autoAlpha: 1,  ease: "power1.out" },
-				{ at: times.zoeOptionsStay,   left: "11%",  top: "31%", autoAlpha: 1,  ease: "none"        },
+				{ at: times.zoeOptions,       left: "12%",  top: "31%", autoAlpha: 1,  ease: "power1.out" },
+				{ at: times.zoeOptionsStay,   left: "12%",  top: "31%", autoAlpha: 1,  ease: "none"        },
 				{ at: times.zoeImage,         left: "43%",  top: "63%", autoAlpha: 1,  ease: "power1.out" },
 				{ at: times.zoeImageStay,     left: "43%",  top: "63%", autoAlpha: 1,  ease: "none"        },
 				{ at: times.zoeOut,           left: "47%",  top: "68%", autoAlpha: 0,  ease: "power1.in"  },
@@ -129,6 +129,9 @@
 				const preloadedImage = new Image();
 				preloadedImage.src = src;
 			});
+
+			// Set initial stage image immediately to prevent flicker
+			stageImage.src = stageSequence[0].src;
 
 			function triggerUserClick(pointerElement, indicatorElement, bumpX) {
 				gsap.killTweensOf(pointerElement, "x,y,scale");
