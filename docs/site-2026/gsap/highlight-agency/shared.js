@@ -117,9 +117,10 @@
       plusStay: 4.0,
       linkMove: 4.6,
       linkClick: 4.7,
-      userExit: 5.05,
       dropInStart: 5.6,
+      linkStay: 6.0,
       dropInSettled: 6.5,
+      userExit: 6.6,
       dropInHold: 9.0,
       loopEnd: 9.0,
     };
@@ -136,7 +137,8 @@
       { at: times.plusHover, left: "64.0%", top: "66.0%", rotation: -30, autoAlpha: 1, ease: "power1.inOut" },
       { at: times.plusStay, left: "64.0%", top: "66.0%", rotation: -30, autoAlpha: 1, ease: "none" },
       { at: times.linkMove, left: "96.0%", top: "66.0%", rotation: 50, autoAlpha: 1, ease: "power2.out" },
-      { at: times.userExit, left: "96.0%", top: "66.2%", rotation: 50, autoAlpha: 0, ease: "power1.in" },
+      { at: times.linkStay, left: "96.0%", top: "66.0%", rotation: 50, autoAlpha: 1, ease: "none" },
+      { at: times.userExit, left: "96.0%", top: "80%", rotation: 50, autoAlpha: 0, ease: "power1.in" },
     ];
 
     var clickKeyframes = [
