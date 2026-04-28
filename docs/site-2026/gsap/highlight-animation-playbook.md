@@ -340,3 +340,15 @@ To convey a user dragging an object across the canvas and dropping it:
 
 **Reset:**
 - In the loop-end reset, restore the dragged image to its start position and `autoAlpha: 0` so it is ready for the next loop.
+
+## Deployment and Branch Sync Workflow
+After pushing changes to the main branch:
+
+1. Always keep **main** and **gh-pages** branches in sync.
+2. Workflow:
+   - Push to main: `git push origin main`
+   - Checkout gh-pages: `git checkout gh-pages`
+   - Merge main: `git merge main`
+   - Push gh-pages: `git push origin gh-pages`
+
+**Rule:** Both branches must remain at the same commit. After any animation update, immediately sync both branches to prevent drift and ensure the deployed site on gh-pages reflects the latest code.
