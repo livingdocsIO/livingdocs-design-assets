@@ -42,11 +42,11 @@
 
 			const cursorKeyframes = [
 				{ at: times.cursorIntro, left: "30%", top: "16%", autoAlpha: 0, rotation: 16 },
-				{ at: times.cursorFocusCard, left: "86%", top: "30%", autoAlpha: 1, rotation: 84, ease: "power1.out" },
-        { at: times.cursorHoldOnOptions, left: "86%", top: "30%", autoAlpha: 1, rotation: 84, ease: "power1.out" },
-				{ at: times.cursorHoverArchive, left: "49%", top: "53%", autoAlpha: 1, rotation: 4, ease: "none" },
-        { at: times.cursorHoldOnArchive, left: "49%", top: "53%", autoAlpha: 1, rotation: 4, ease: "none" },
-				{ at: times.cursorExit, left: "49%", top: "56%", autoAlpha: 0, rotation: 4, ease: "power1.in" },
+				{ at: times.cursorFocusCard, left: "87.5%", top: "31%", autoAlpha: 1, rotation: 84, ease: "power1.out" },
+        { at: times.cursorHoldOnOptions, left: "87.5%", top: "31%", autoAlpha: 1, rotation: 84, ease: "power1.out" },
+				{ at: times.cursorHoverArchive, left: "49%", top: "54%", autoAlpha: 1, rotation: 4, ease: "in-out" },
+        { at: times.cursorHoldOnArchive, left: "49%", top: "54%", autoAlpha: 1, rotation: 4, ease: "none" },
+				{ at: times.cursorExit, left: "49%", top: "57%", autoAlpha: 0, rotation: 4, ease: "power1.in" },
 			];
 
 			const cursorClickTimes = [times.clickOpenOptions, times.clickArchive];
